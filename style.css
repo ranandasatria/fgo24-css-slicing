@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2948FF;
+    padding: 15px 40px;
+    height: 76px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+}
+
+.logo-name {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.sign-in {
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.sign-in:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sign-up {
+    background: #FFFFFF;
+    color: #3969FD;
+}
+
+.sign-up:hover {
+    background: #e0e0e0;
+}
+
+.hero-section {
+    background: #2948FF;
+    /* padding: 50px 40px; */
+    color: #FFFFFF;
+    top: 75px;
+}
+
+.hero-title {
+    width: 1180;
+    height: 146;
+    top: 133px;
+    left: 130px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+    align-items: center;
+    padding: 57px;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 154px;
+    max-width: 1052px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    width: 476px;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    padding: 24px;
+}
+
+.user-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 24px;
+}
