@@ -7,7 +7,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background: #2948FF;
-    margin: 0;
     height: 100vh;
 }
 
@@ -29,8 +28,8 @@ p {
 
 main {
     display: flex;
+    height: 100vh;
     justify-content: space-between;
-    min-height: 100vh;
 }
 
 .container-left {
@@ -38,13 +37,17 @@ main {
     padding: 60px;
     width: 50%;
     border-radius: 0 60px 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 .container-left-child {
     display: flex;
     flex-direction: column;
-    max-width: 562px;
-    margin: 0 auto;
+    /* justify-content: center; */
+    /* max-width: 562px; */
     gap: 13px
 }
 
@@ -52,13 +55,16 @@ main {
     background-color: #2948FF;
     width: 50%;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 
 .container-right img {
-    width: 627px;
-    height: 859px;
+    width: auto;
+    height: 100%;
+    /* display: flex;
+    align-items: flex-end;
+    justify-content: flex-end; */
 }
 
 .logo {
@@ -158,20 +164,74 @@ form {
 
 
 @media (max-width: 768px) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .container-left {
         width: 355px;
-        height: 380px;
+        height: 480px; 
         padding: 30px;
+        border-radius: 20px;
     }
 
     .container-left h2 {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 100%;
-    letter-spacing: 0%;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0%;
     }
 
     .container-right {
         display: none;
     }
+
+    .pin-container {
+        width: 300px;
+      }
 }
+/* 
+@media (max-width: 1200px) {
+
+    .container-right {
+        display: auto;
+    }
+
+     body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }  */
+
+    /* .container-left {
+        width: 355px;
+        height: 480px; 
+        padding: 30px;
+        border-radius: 20px;
+    } */
+
+    /* .container-left h2 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0%;
+    } */
+
+    /* .pin-container {
+        width: 300px;
+      } */
+

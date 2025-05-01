@@ -7,7 +7,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background: #2948FF;
-    margin: 0;
+    height: 100vh;
 }
 
 h2 {
@@ -29,21 +29,25 @@ p {
 main {
     display: flex;
     justify-content: space-between;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .container-left {
     background-color: #FFFFFF;
     padding: 60px;
     width: 50%;
+    height: 100%;
     border-radius: 0 60px 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .container-left-child {
     display: flex;
     flex-direction: column;
-    max-width: 562px;
-    margin: 0 auto;
+    justify-content: center;
+    /* max-width: 562px; */
     gap: 13px
 }
 
@@ -56,8 +60,11 @@ main {
 }
 
 .container-right img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
 }
 
 .logo {

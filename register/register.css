@@ -256,4 +256,10 @@ input[type="password"] {
     .container-right {
         padding: 30px;
     }
+    .container-right {
+        display: none;
+    }
+    body {
+        background-color: #FFFFFF;
+    }
 }
