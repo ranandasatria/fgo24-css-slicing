@@ -68,7 +68,7 @@ h2 {
 }
 
 .body-medium--blue {
-  color: var(--text-blue);
+  color: var(--blue);
 }
 
 .body-medium--bold {
@@ -90,6 +90,19 @@ h2 {
   letter-spacing: 0;
   text-align: right;
   color: var(--red);
+}
+
+.body-medium--semibold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.body-medium--semibold--blue {
+  color: var(--blue);
 }
 
 .body-small {
@@ -154,6 +167,39 @@ h2 {
   line-height: 24px;
   letter-spacing: -0.06px;
   color: var(--blue);
+}
+
+/* button */
+
+.btn-submit {
+  border-radius: 6px;
+  padding: 4px 12px 4px 8px;
+  height: 45px;
+  width: 100%;
+  background: #2948FF;
+  border: none;
+  gap: 8px;
+}
+
+.button-primary, .button-secondary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 45px;
+  padding: 4px 12px 4px 8px;
+  gap: 8px;
+  border-radius: 6px;
+  background-color: var(--blue);
+  text-decoration: none;
+  text-align: center;
+  border: none;
+}
+
+.button-secondary {
+    background-color: #FFFFFF;
+    border: 1px solid var(--blue);
 }
 
 /* navbar */
@@ -815,14 +861,11 @@ h2 {
 .popup-modal {
   position: absolute;
   width: 556px;
-  /* Default width */
   max-width: calc(100% - 48px);
-  /* Account for padding (24px * 2) of parent */
   height: 590px;
   top: 160px;
   left: 50%;
   transform: translateX(-50%);
-  /*Center adjust*/
   border-radius: 16px;
   padding: 20px;
   gap: 10px;
@@ -840,6 +883,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .popup-header {
@@ -847,6 +891,11 @@ h2 {
   padding: 10px;
   gap: 10px;
   border-bottom: 1px solid #E8E8E8;
+}
+
+.popup-modal-success-image {
+  width: 270px;
+  height: 270px;
 }
 
 .popup-modal-main {
@@ -889,6 +938,7 @@ h2 {
 .login-link {
   text-align: center;
 }
+
 
 
 /* responsive */
