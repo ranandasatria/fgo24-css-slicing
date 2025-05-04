@@ -3,41 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:400,500&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <title>Fazztrack - E-Wallet</title>
+    <title>E-Wallet</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="src/logo-icon.png" alt="logo E-Wallet">
-                <span class="logo-name">E-Wallet</span>
-            </div>
-            <div class="menu">
-                <a href="#SignIn" class="btn sign-in">Sign In</a>
-                <a href="#SignUp" class="btn sign-up">Sign Up</a>
-            </div>
-        </nav>
-    </header>
-
-    <section class="hero-section">
-        <h1 class="hero-title">Experience the Future of Digital Payments with e-wallet</h1>
-        <div class="hero-content">
-            <div class="hero-img">
-            </div>
-            <div class="hero-text">
-                <p class="hero-subtitle">Simplify Your Life with Secure and Convenient Mobile Payments</p>
-                <div class="cta-download">
-                </div>
-                <div class="total-user">
-                </div>
-                <p class="user-text">Around the world, we already have over 4.6 happy user</p>
-            </div>
-            </div>
+    <header class="navbar landingnav">
+        <div class="logo landinglogo">
+          <img src="../src/logo-icon.png" alt="logo E-Wallet">
+          <span>E-Wallet</span>
         </div>
+        <nav class="menu-top">
+          <a href="login/login.html" class="button-primary"><span class="body-small body-small--semibold--white">Sign In</a>
+          <a href="register/register.html" class="button-secondary"><span class="body-small body-small--semibold--blue">Sign Up</a>
+          </div>
+        </nav>
+      </header>
+
+      <div class="hero-page">
+        <div class="hero-page-headline-and-content">
+          <span class="heading-large">Experience the Future of Digital Payments with e-wallet</span>
+          <div class="hero-content">
+              <div class="hero-description">
+                  <span class="body-medium body-medium--white">Simplify Your Life with Secure and Convenient Mobile Payments</span>
+                  <div class="download-app-container">
+                      <a href="" class="button-secondary"><img src="src/googleplayicon.svg"><span class="body-small body-small--semibold--blue">Play Store</span></a>
+                      <a href="" class="button-primary"><img src="src/appleicon.svg"><span class="body-small body-small--semibold--white">Apps Store</span></a>
+                  </div>
+                  <div class="total-user">
+                      <span class="heading-jakarta-sans">4.6 M</span>
+                      <img class="total-user-img" src="src/totaluser.svg" alt="Total User">
+                  </div>
+                  <span class="body-medium-jakarta-sans">Around the world, we already have over 4.6 happy user</span>
+              </div>
+              <img class="hero-image" src="src/mobiledashboardhero.svg" alt="Mobile Dashboard">
+          </div>
+        </div>
+      </div>
+
+      <section class="values">
+            <div class="values-grid">
+                <div class="value-item">
+                    <img src="src/headseticon.png" alt="Headset Icon">
+                    <div>
+                        <span class="body-large--bold">24/7 Support</span>
+                        <span class="body-medium">We have 24/7 contact support so you can contact us whenever you want and we will respond it.</span>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <img src="src/privacyicon.png" alt="Privacy Icon">
+                    <div>
+                        <span class="body-large--bold">Data Privacy</span>
+                        <span class="body-medium">We make sure your data is safe in our database and we will encrypt any data you submitted to us.</span>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <img src="src/easydownloadicon.png" alt="Easy Download Icon">
+                    <div>
+                        <span class="body-large--bold">Easy Download</span>
+                        <span class="body-medium">Zwallet is 100% totally free to use it’s now available on Google Play Store and App Store.</span>
+                    </div>
+                </div>
+            </div>
     </section>
+
+    <section class="solution">
+          <div class="solution-content">
+              <img class="welcome-img" src="src/welcomeimage.svg" alt="Financial Chart">
+              <div class="welcome">
+                  <span class="body-large--bold body-large--bold--blue">WELCOME TO E-WALLET</span>
+                  <span class="heading-medium--large--dark">Your All-in-One Digital Payment Solution</span>
+                  <span class="body-medium">Say goodbye to cash and hello to the future of payments! With e-wallet, you have the power of secure, fast, and convenient digital transactions right at your fingertips. Whether you're shopping, dining out, or sending money to loved ones, we've got you covered.</span>
+                  <a href="#GetStarted" class="button-primary"><span class="body-medium-jakarta-sans">Get Started</span></a>
+              </div>
+              
+          </div>
+  </section>
+
+
 </body>
+
 </html>
