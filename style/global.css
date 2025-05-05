@@ -92,7 +92,7 @@ h2 {
   color: var(--red);
 }
 
-.body-medium--semibold--dark{
+.body-medium--semibold--dark {
   font-weight: 500;
   color: var(--text-dark)
 }
@@ -198,7 +198,8 @@ h2 {
 }
 
 .button-primary,
-.button-secondary, .button-danger {
+.button-secondary,
+.button-danger {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -224,7 +225,7 @@ h2 {
   border: 1px solid var(--blue);
 }
 
-.button-secondary:hover{
+.button-secondary:hover {
   cursor: pointer;
   background-color: #eeeeee;
 }
@@ -768,7 +769,7 @@ h2 {
 
 .stepper-line {
   width: 85px;
-  border: 0.5px dotted #4F5665;
+  border: 0.5px dashed #4F5665;
 }
 
 /* set nominal section/transfer2 */
@@ -1089,7 +1090,7 @@ h2 {
   gap: 12px
 }
 
-.label-and-input{
+.label-and-input {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1110,12 +1111,18 @@ h2 {
   border-radius: 8px;
 }
 
-input[type="text"], input[type="email"], input[type="number"] {
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
   border: none;
   width: 100%;
 }
 
-input[type="text"], input[type="email"], input[type="number"]:focus{
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"]:focus {
   outline: none;
 }
 
@@ -1129,7 +1136,70 @@ input::placeholder {
   border: none
 }
 
+/* change pin */
 
+.change-pin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 36px;
+  max-height: 318px;
+  height: 100%;
+}
+
+.enter-pin-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+}
+
+.pin-row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 191px;
+}
+
+.enter-pin-row {
+  background-color: transparent;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+input[type="number"].pin-input {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #E8E8E8;
+  margin: 0 10px;
+  color: var(--text-dark);
+}
+
+input[type="number"].pin-input:focus {
+  outline: none;
+  border-bottom: 2px solid #007bff;
+}
+
+input[type="number"].pin-input::placeholder {
+  color: #999;
+  font-size: 24px;
+  text-align: center;
+  font-weight: normal;
+}
+
+input[type="number"].pin-input::-webkit-inner-spin-button,
+input[type="number"].pin-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 
 /* responsive */

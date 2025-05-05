@@ -9,6 +9,7 @@
     <link href="../style/global.css" rel="stylesheet">
     <title>Transfer</title>
   </head>
+  <body>
   <header class="navbar">
     <div class="logo">
       <img src="../src/logo-icon.png" alt="logo E-Wallet">
@@ -47,15 +48,26 @@
                 <span class="heading-medium heading-medium--semibold">Enter Your Pin 👋</span>
                 <span class="body-medium">Enter Your Pin For Transaction</span>
                 <form class="enter-pin">
-                    <div class="pin-container">
-                        <div class="pin-box filled">1</div>
-                        <div class="pin-box"></div>
-                        <div class="pin-box"></div>
-                        <div class="pin-box"></div>
-                        <div class="pin-box"></div>
-                        <div class="pin-box"></div>
-                        <div class="pin-box"></div>
-                      </div>
+                  <div class="pin-row-container">
+                    <div class="enter-pin-row">
+                        <input type="number" id="pin" name="pin" class="pin-input" placeholder="" maxlength="1" min="1" max="9">
+                    </div>
+                    <div class="enter-pin-row">
+                        <input type="number" id="pin" name="pin" class="pin-input" placeholder="" maxlength="1" min="1" max="9">
+                    </div>
+                    <div class="enter-pin-row">
+                        <input type="number" id="pin" name="pin" class="pin-input" placeholder="" maxlength="1" min="1" max="9">
+                    </div>
+                    <div class="enter-pin-row">
+                        <input type="number" id="pin" name="pin" class="pin-input" placeholder="" maxlength="1" min="1" max="9">
+                    </div>
+                    <div class="enter-pin-row">
+                        <input type="number" id="pin" name="pin" class="pin-input" placeholder="" maxlength="1" min="1" max="9">
+                    </div>
+                    <div class="enter-pin-row">
+                        <input type="number" id="pin" name="pin" class="pin-input" placeholder="" maxlength="1" min="1" max="9">
+                    </div>
+                </div>
                       <button class="btn-submit" type="submit"><span class="body-medium body-medium--white">Next</span></button>
                 </form>
                 <span class="login-link body-medium">Forgot Your Pin? <a href="#login">Reset</a></span>
@@ -113,3 +125,5 @@
       </div>
     </div>
   </div>
+  </body>
+  </html>
