@@ -13,7 +13,7 @@
     <header class="navbar landingnav">
       <div class="logo landinglogo">
         <img src="../src/logo-icon.png" alt="logo E-Wallet">
-        <span>E-Wallet</span>
+        <span class="logo-body--medium">E-Wallet</span>
       </div>
       <nav class="menu-top">
         <a href="login/login.html" class="button-primary"><span class="body-small body-small--semibold--white">Sign In</a>
@@ -159,23 +159,25 @@
         <div class="footer-logo">
           <div class="logo">
             <img src="src/logo-icon.png" alt="logo E-Wallet">
-            <span>E-Wallet</span>
+            <span class="logo-body--large">E-Wallet</span>
           </div>
-          <p>Clarity gives you the blocks and components you need to create a truly professional website.</p>
+          <span class="body-medium body-medium--white">Clarity gives you the blocks and components you need to create a truly professional website.</span>
         </div>
         <div class="footer-contact">
-          <h4>GET IN TOUCH</h4>
-          <div class="contact-item">
-            <img src="src/phone-icon-white.svg" alt="Phone Icon">
-            <span>+62 5637 8882 9901</span>
-          </div>
-          <div class="contact-item">
-            <img src="src/email-icon-white.svg" alt="Email Icon">
-            <span>contact@zwallet.com</span>
+          <span class="body-large--bold body-large--bold--white">GET IN TOUCH</span>
+          <div class="contact-item-container">
+            <div class="contact-item">
+              <img src="src/phone-icon-white.svg" alt="Phone Icon">
+              <span class="body-medium body-medium--white">+62 5637 8882 9901</span>
+            </div>
+            <div class="contact-item">
+              <img src="src/email-icon-white.svg" alt="Email Icon">
+              <span class="body-medium body-medium--white">contact@zwallet.com</span>
+            </div>
           </div>
         </div>
         <div class="footer-social">
-          <h4>SOCIAL MEDIA</h4>
+          <span class="body-large--bold body-large--bold--white">SOCIAL MEDIA</span>
           <div class="social-icons">
             <img src="src/twitter-icon.svg" alt="Twitter">
             <img src="src/facebook-icon.svg" alt="Facebook">
@@ -184,16 +186,19 @@
           </div>
         </div>
         <div class="footer-newsletter">
-          <h4>NEWSLETTER</h4>
-          <div class="newsletter-input">
-            <img src="src/email-icon.png" alt="Email Icon">
-            <input type="email" placeholder="Enter Your Email">
-          </div>
-          <a href="#" class="btn-subscribe">Subscribe</a>
+          <span class="body-large--bold body-large--bold--white">NEWSLETTER</span>
+          <form class="newsletter-input">
+            <div class="input-row">
+              <img src="../src/email16icon.svg" alt="email">
+              <input type="email" id="email" name="email" placeholder="Enter Your Email">
+            </div>
+            <a href="#" class="button-secondary"><span class="body-small body-small--semibold--blue">Subscribe</span></a>
+          </form>
         </div>
       </div>
-      <hr>
-      <p class="copyright">© Copyright 2022. Reserved Clarity</p>
+      </div>
+      <div class="footer-divider"></div>
+      <span class="body-small body-small--white">© Copyright 2022. Reserved Clarity</span>
       </div>
     </footer>
   </body>
