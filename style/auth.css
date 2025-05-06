@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #2948FF;
+  margin: 0;
+  min-height: 100vh; 
+}
+
+h2 {
+  color: #0B132A;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+p {
+  color: #4F5665;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 166%;
+  letter-spacing: 0%;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh; 
+  align-items: stretch; 
+}
+
+.container-left {
+  background-color: #FFFFFF;
+  padding: 60px;
+  width: 50%;
+  border-radius: 0 60px 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.forgot-password-mobile-container {
+  justify-content: center;
+  align-items: center;
+}
+
+.forgot-password-mobile {
+  display: flex;
+  border-radius: 20px;
+  width: 550px;
+  height: 466px;
+}
+
+.container-left-child {
+  display: flex;
+  flex-direction: column;
+  max-width: 562px;
+  margin: 0 auto;
+  gap: 13px;
+  width: 100%;
+  min-height: 0;
+  flex: 1; 
+  justify-content: center;
+}
+
+.container-right {
+  background-color: #2948FF;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%; 
+}
+
+.container-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 32px;
+  width: 32px;
+}
+
+.logo span {
+  color: #2948FF;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+button {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  width: 100%;
+  height: 51px;
+  border-radius: 100px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+button img {
+  width: 24px;
+  height: 24px;
+}
+
+button span {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0.5%;
+  text-align: center;
+  color: #4F5665;
+}
+
+button:hover {
+  background-color: #00000007;
+  cursor: pointer;
+}
+
+.divider {
+  color: #AAAAAA;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0.5%;
+  position: relative;
+  text-align: center;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background: #DEDEDE;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+label {
+  margin-bottom: -32px;
+}
+
+label span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #0B132A;
+}
+
+.password-container {
+  position: relative;
+}
+
+input[type="email"],
+input[type="password"] {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #DEDEDE;
+  padding: 14px 36px;
+  width: 100%;
+}
+
+.show-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+input[type="email"] {
+  background-image: url('../src/emailicon.png');
+  background-position: 14px 13px;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+input[type="password"] {
+  background-image: url('../src/passwordicon.png');
+  background-position: 14px 13px;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+.change-pin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 36px;
+  max-height: 318px;
+  height: 100%;
+}
+
+.enter-pin-new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+}
+
+.pin-row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 191px;
+}
+
+.enter-pin-row {
+  background-color: transparent;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+input[type="number"].pin-input {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #E8E8E8;
+  margin: 0 10px;
+  color: black;
+}
+
+input[type="number"].pin-input:focus {
+  outline: none;
+  border-bottom: 2px solid #007bff;
+}
+
+input[type="number"].pin-input::placeholder {
+  color: #999;
+  font-size: 24px;
+  text-align: center;
+  font-weight: normal;
+}
+
+input[type="number"].pin-input::-webkit-inner-spin-button,
+input[type="number"].pin-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn-register {
+  margin-top: 12px;
+  border-radius: 6px;
+  padding: 10px;
+  background: #2948FF;
+  border: none;
+}
+
+.btn-register span {
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.btn-register:hover {
+  background-color: #1435ee;
+}
+
+.login-link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #4F5665;
+  margin-top: 20px;
+}
+
+.login-link a {
+  color: #2948FF;
+  text-decoration: none;
+}
+
+.container-right-img {
+  display: flex;
+  align-items: flex-end;
+  max-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  main {
+      flex-direction: column;
+  }
+  .container-left {
+      width: 100%;
+      height: 100vh;
+  }
+  .container-left {
+      border-radius: 0;
+      padding: 30px;
+  }
+  .container-right {
+      padding: 30px;
+      display: none;
+  }
+  body {
+      background-color: #2948FF;
+  }
+
+  
+  .enter-pin-mobile {
+    margin: 64px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .enter-pin-mobile-left {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  input[type="number"].pin-input {
+      width: 100%;
+      font-size: 26px;
+  }
+
+  .forgot-password-mobile-container {
+    margin: 64px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .forgot-password-mobile {
+    display: flex;
+    border-radius: 20px;
+    max-width: 550px;
+    max-height: 466px;
+    padding: 40px 17px;
+  }
+}
+
