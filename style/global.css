@@ -361,6 +361,10 @@ h2 {
   display: none;
 }
 
+.nav-divider {
+  display: none;
+}
+
 /* main container */
 .main-container {
   display: flex;
@@ -511,6 +515,16 @@ h2 {
   align-items: center;
 }
 
+.fast-service > span {
+  flex: 1;
+}
+
+.fast-service-button {
+  display: flex;
+  flex-direction: row;
+  gap: 14px
+}
+
 .button-active {
   display: flex;
   flex-direction: row;
@@ -558,10 +572,15 @@ h2 {
   gap: 10px;
   border-radius: 6px;
   padding: 10px;
-  background: #F1F1F1;
+  background-color: #F1F1F1;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.filter:hover {
+  cursor: pointer;
+  background-color: #e7e7e7;
 }
 
 .filter-btn {
@@ -1193,6 +1212,13 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
   margin: 0;
 }
 
+.icon-mobile {
+  display: none;
+}
+.icon-desktop {
+  display: inline;
+}
+
 /* responsive */
 
 @media (max-width: 1320px) {
@@ -1220,6 +1246,11 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
   .card-user {
     width: 100%;
   }
+
+.card-user > span {
+  flex: 1;
+}
+
 }
 @media (max-width: 980px) {
   .navbar {
@@ -1227,12 +1258,22 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
     height: 168px;
     align-items: flex-start;
     position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .nav-divider {
+    display: flex;
+    width: 100%;
+    /* margin-left: -16px; */
+    margin-top: 6px;
+    height: 2px;
+    border-bottom: 1px solid #FFFFFF3D
   }
 
   .menu-top {
-    align-items: flex-start;
-    gap: 12px;
-    padding-top: 24px;
+    gap: 10px;
+    padding-top: 12px;
   }
 
   .logo {
@@ -1253,6 +1294,27 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
     align-items: flex-start;
   }
 
+  .mobile-greetings > span:nth-child(2){
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .profileWizard {
+    height: 30px;
+    width: 30px;
+  }
+
+  .openprofile {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .profile-menu{
+    gap: 0;
+  }
+
+
+
   .main-container {
     flex-direction: column-reverse;
     align-items: center;
@@ -1267,28 +1329,45 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
     /* z-index: 5; */
     width: 100%;
     border: none;
+    padding: 0;
   }
 
   .menu-left {
     flex-direction: row;
+    justify-content: space-around;
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 10;
+    z-index: 1000;
     height: auto;
     background-color: white;
     width: 100%;
-    gap: 0
+    gap: 0;
+    border-top: 1px solid #E8E8E8;
   }
 
   .menu-active, .menu-inactive {
     flex-direction: column;
     font-size: 10px;
-    gap: 7px;
-    height: 100%;
-    width: 100%;
+    gap: 4px;
+    height: auto;
+    width: auto;
+    background-color: var(--text-white);
+  }
+  .icon-mobile {
+    display: inline;
+  }
+  .icon-desktop {
+    display: none;
   }
 
+  .menu-active > span, .menu-inactive > span {
+    font-size: 10px;
+  }
+
+  .menu-active > span {
+    color: var(--text-blue)
+  }
 
   .container-analytics {
     width: 100%;
@@ -1325,20 +1404,21 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
   .big-number {
     height: auto;
     padding: 28px 21px;
-    box-shadow: 0px 0px 24px rgba(165, 165, 165, 0.35);
+    /* box-shadow: 0px 0px 24px 0px #A5A5A559; */
     border-radius: 24px 24px 0 0;
-    width: 100%;
+    width: calc(100% - 48px);
     height: 108px;
     justify-content: space-evenly;
     background-image: url('../src/wavebackground.svg');
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: left 59px;
+    background-position: left 61px;
     position: absolute;
-    top: 85px;
+    top: 90px;
     left: 24px;
     z-index: 500;
-    margin-right: 24px;
+    right: 24px;
+    margin: 0 auto;
   }
 
   .small-card {
@@ -1372,13 +1452,13 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
 
   .small-card-header .body-medium {
     font-weight: 500;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 12px;
     color: var(--black);
   }
 
-  .small-card-child .heading-small--semibold {
-    font-weight: 500;
+  .small-card-child .heading-small {
+    font-weight: 700;
     font-size: 16px;
     line-height: 15px;
     color: var(--black);
@@ -1388,6 +1468,8 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
+    /* margin-top: 8px; */
     padding: 1px 2px 1px 4px;
     gap: 2px;
     width: auto;
@@ -1399,7 +1481,7 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
 
   .small-card-caption .caption-medium {
     font-weight: 400;
-    font-size: 9px;
+    font-size: 11px;
     line-height: 18px;
     text-align: right;
     color: var(--green-dark);
@@ -1417,6 +1499,7 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
   .user-menu {
     display: none;
   }
+
 
   .profile-menu:hover .user-menu {
     display: none !important;
@@ -1445,13 +1528,27 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
     padding: 24px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+  .body-medium {
+    font-size: 12px;
+  }
+
+  .body-small {
+    font-size: 12px;
+  }
+
+  .filter {
+    padding: 0;
+  }
+
   .navbar {
     padding: 0 15px;
   }
 
   .container-right {
     margin: 15px;
+    width: 100%;
   }
 
   .filter-container {
@@ -1467,8 +1564,10 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
     width: 100%;
   }
 
+ 
+
   .big-number {
-    padding: 20px 15px;
+    /* padding: 20px 15px; */
     gap: 30px;
   }
 
@@ -1480,12 +1579,68 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
     width: 60px;
   }
 
+
+  .small-card-header > img {
+    display: none;
+  }
+  .small-card-header .body-medium {
+    font-size: 10px;
+  }
+
+  .small-card-child .heading-small {
+    font-size: 12px;
+  }
+
+
+  .small-card-caption .caption-medium {
+    font-size: 9px;
+  }
+
+  .caption-card-one {
+    display: none;
+  }
+
   .small-card-caption {
     width: 60px;
+    text-align: left;
   }
 
   .user-menu {
     display: none;
   }
+
+  .container-fast-service {
+    border: none;
+    padding: 0;
+  }
+
+  .fast-service {
+    justify-content: center;
+  }
+
+  .fast-service > span {
+    display: none;
+  }
+
+  .fast-service-button {
+    width: 100%;
+  }
+
+  .button-active {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .chart {
+    border: none;
+    padding: 0;
+  }
+
+  .container-transaction{
+    border: 0;
+    padding: 0;
+  }
+
 }
+
 
