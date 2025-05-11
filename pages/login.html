@@ -32,12 +32,16 @@
                 <div class="divider">Or</div>
                 <form class="register-form">
                     <label for="email"><span>Email</span></label><br>
-                    <input type="email" id="email" name="email" placeholder="Enter Your Email">
-                    <label for="password"><span>Password</span></label><br>
-                    <div class="password-container">
-                        <input type="password" id="password" name="password" placeholder="Enter Your Password">
-                        <span class="show-password">👁</span>
+                                        <div class="input-row">
+                        <img src="/src/email16icon.svg" alt="password">
+                        <input type="email" id="email" name="email" placeholder="Enter Your Email">
                     </div>
+                    <label for="password"><span>Password</span></label><br>
+                    <div class="input-row">
+                        <img src="/src/passwordicon16.svg" alt="password">
+                        <input type="password" id="password" name="password" placeholder="Enter Your Password">
+                        <img class="toggle-password" src="/src/eyeopen.svg" alt="Toggle Password">
+                      </div>
                     <button class="btn-register" type="submit"><span>Login</span></button>
                 </form> 
                 <span class="login-link">Don't Have an Account? <a href="register.html">Register</a></span>
@@ -47,5 +51,19 @@
             <img src="../src/pay.png" alt="wallet">
         </div>
     </main>
+    <script>
+  document.querySelectorAll('.input-row').forEach(function (row) {
+    const input = row.querySelector('input[type="password"]')
+    const toggle = row.querySelector('.toggle-password')
+
+    if (!input || !toggle) return;
+
+    toggle.addEventListener('click', function () {
+      const isPassword = input.getAttribute('type') === 'password'
+      input.setAttribute('type', isPassword ? 'text' : 'password')
+      toggle.setAttribute('src', isPassword ? '/src/eyeclose.svg' : '/src/eyeopen.svg')
+    })
+  });
+</script>
 </body>
 </html>
