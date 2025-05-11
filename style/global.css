@@ -654,6 +654,7 @@ h2 {
 .page-title {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 17px;
 }
 
@@ -716,6 +717,11 @@ h2 {
   align-items: flex-start;
 }
 
+  .container-username-phone{
+display: flex;
+flex-direction: row;
+  }
+
 .table-row {
   width: 100%;
   padding: 12px 16px;
@@ -724,6 +730,15 @@ h2 {
   justify-content: space-evenly;
   align-items: center;
   border-bottom: 1px solid #E8E8E84D;
+}
+
+.table-row:nth-child(odd){
+background-color: #F9FAFB;
+}
+
+.table-img > img {
+  width: 48px;
+  height: 48px;
 }
 
 .table-row--grey {
@@ -1219,6 +1234,7 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
   display: inline;
 }
 
+
 /* responsive */
 
 @media (max-width: 1320px) {
@@ -1314,11 +1330,12 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
   }
 
 
-
   .main-container {
     flex-direction: column-reverse;
     align-items: center;
-    padding: 24px;
+    /* padding: 24px; */
+     /* position: relative; */
+    /* padding-top: 60px;  */
   }
 
   .container-left {
@@ -1367,6 +1384,10 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
 
   .menu-active > span {
     color: var(--text-blue)
+  }
+
+  .container-right{
+    padding: 24px
   }
 
   .container-analytics {
@@ -1527,7 +1548,87 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
     width: 100%;
     padding: 24px;
   }
+
+  .nondashboard {
+  display: none;
+  }
+
+.history-transaction-container-right {
+  padding: 0;
+  gap: 0;
+  height: 100%;
+  margin-bottom: 60px;
 }
+
+  .page-title {
+    background-color: var(--blue);
+    height: 54px;
+    align-items: center;
+    padding: 16px; 
+    width: 100%;
+  }
+
+  .page-title > span {
+      color: var(--text-white)
+  }
+
+  .page-title > img {
+    display: none;
+  }
+
+  .find-people-header > span:nth-child(2){
+  display: none;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+  .search-bar-box{
+    width: 100%;
+  }
+  .search-bar-box::placeholder{
+    font-size: 12px;
+  }
+  .find-transaction-container {
+    border: none;
+    padding: 0;
+  height: 100%;
+  }
+
+  .find-transaction-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .find-transaction-table {
+    padding: 0;
+  height: 100%;
+  }
+
+  .container-username-phone{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .table-username, .table-phone {
+    width: 100%;
+  }
+
+  .people-information-container{
+    padding: 0;
+  }
+
+#input-amount::placeholder, #input-notes::placeholder {
+  font-size: 12px;
+}
+
+.menu-left > a:nth-last-child(1) {
+  display: none;
+}
+
+}
+  
+
 @media (max-width: 768px) {
 
   .body-medium {

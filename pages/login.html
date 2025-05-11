@@ -29,21 +29,24 @@
                         <span>Sign in With Facebook</span>
                     </button>  
                 </div>
-                <div class="divider">Or</div>
-                <form class="register-form">
-                    <label for="email"><span>Email</span></label><br>
-                                        <div class="input-row">
-                        <img src="/src/email16icon.svg" alt="password">
-                        <input type="email" id="email" name="email" placeholder="Enter Your Email">
-                    </div>
-                    <label for="password"><span>Password</span></label><br>
-                    <div class="input-row">
-                        <img src="/src/passwordicon16.svg" alt="password">
-                        <input type="password" id="password" name="password" placeholder="Enter Your Password">
-                        <img class="toggle-password" src="/src/eyeopen.svg" alt="Toggle Password">
-                      </div>
-                    <button class="btn-register" type="submit"><span>Login</span></button>
-                </form> 
+               <form class="login-form">
+  <label for="loginEmail"><span>Email</span></label><br>
+  <div class="input-row">
+    <img src="/src/email16icon.svg" alt="email">
+    <input type="email" id="loginEmail" name="email" placeholder="Enter Your Email">
+  </div>
+  <small id="loginEmailError" class="error"></small>
+
+  <label for="loginPassword"><span>Password</span></label><br>
+  <div class="input-row">
+    <img src="/src/passwordicon16.svg" alt="password">
+    <input type="password" id="loginPassword" name="password" placeholder="Enter Your Password">
+    <img class="toggle-password" src="/src/eyeopen.svg" alt="Toggle Password">
+  </div>
+  <small id="loginPasswordError" class="error"></small>
+
+  <button class="btn-register" type="submit"><span>Login</span></button>
+</form>
                 <span class="login-link">Don't Have an Account? <a href="register.html">Register</a></span>
             </div>
         </div>
@@ -52,18 +55,63 @@
         </div>
     </main>
     <script>
-  document.querySelectorAll('.input-row').forEach(function (row) {
-    const input = row.querySelector('input[type="password"]')
-    const toggle = row.querySelector('.toggle-password')
+document.querySelectorAll('.input-row').forEach(function (row) {
+  const input = row.querySelector('input[type="password"]')
+  const toggle = row.querySelector('.toggle-password')
 
-    if (!input || !toggle) return;
+  if (!input || !toggle) return;
 
-    toggle.addEventListener('click', function () {
-      const isPassword = input.getAttribute('type') === 'password'
-      input.setAttribute('type', isPassword ? 'text' : 'password')
-      toggle.setAttribute('src', isPassword ? '/src/eyeclose.svg' : '/src/eyeopen.svg')
-    })
-  });
+  toggle.addEventListener('click', function () {
+    const isPassword = input.getAttribute('type') === 'password'
+    input.setAttribute('type', isPassword ? 'text' : 'password')
+    toggle.setAttribute('src', isPassword ? '/src/eyeclose.svg' : '/src/eyeopen.svg')
+  })
+})
+
+document.querySelector('.login-form').addEventListener('submit', function (e) {
+  e.preventDefault()
+
+  const emailInput = document.getElementById('loginEmail')
+  const passwordInput = document.getElementById('loginPassword')
+  const emailError = document.getElementById('loginEmailError')
+  const passwordError = document.getElementById('loginPasswordError')
+
+  emailError.textContent = ''
+  passwordError.textContent = ''
+
+  let isValid = true
+
+  if (!emailInput.value.trim()) {
+    emailError.textContent = 'Email wajib diisi.'
+    isValid = false
+  }
+
+  if (!passwordInput.value) {
+    passwordError.textContent = 'Password wajib diisi.'
+    isValid = false
+  }
+
+  const storedUser = JSON.parse(localStorage.getItem('userData'))
+
+  if (
+    isValid &&
+    (!storedUser ||
+      storedUser.email !== emailInput.value.trim() ||
+      storedUser.password !== passwordInput.value)
+  ) {
+    passwordError.textContent = 'Email atau password salah.'
+    isValid = false
+  }
+
+  if (isValid) {
+
+    window.location.href = 'dashboard.html'
+    } else {
+
+    // localStorage.setItem('isLoggedIn', 'true')
+    // document.querySelector('.login-form').reset()
+  }
+})
 </script>
 </body>
 </html>
