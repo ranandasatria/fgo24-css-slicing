@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "devDependencies": {
-    "live-server": "^1.2.2"
+  "dependencies": {
+    "openssl": "^2.0.0",
+    "serve": "^14.2.4"
   }
 }

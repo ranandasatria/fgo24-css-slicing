@@ -10,43 +10,43 @@
     <title>Dashboard</title>
   </head>
   <body>
-    <header class="navbar">
-      <div class="logo">
-        <img src="../src/logo-icon.png" alt="logo E-Wallet">
-        <span>E-Wallet</span>
-      </div>
-      <nav class="menu-top">
-        <div class="desktop-greetings">
-          <span class="body-medium">Galuh Wizard</span>
-        </div>
-        <div class="profile-menu">
-          <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
-          <a href="#dropdown"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
-          <div class="user-menu">
-            <a href="#profile" class="menu-item"><img src="../src/profilemenuicon.svg" alt="Profile Icon"><span class="body-medium body-medium--white"> Profile</span></a>
-            <a href="#logout" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-small body-small--red">Keluar</span></a>
-          </div>
-        </div>
-        <div class="mobile-greetings">
-          <span class="caption-medium caption-medium--white">Hello,</span>
-          <span class="body-small body-small--white">Galuh Wizard</span>
-        </div>
-      </nav>
-      <div class="nav-divider"></div>
-    </header>
+  <header class="navbar">
+  <div class="logo">
+    <img src="../src/logo-icon.png" alt="logo E-Wallet">
+    <span>E-Wallet</span>
+  </div>
+ <nav class="menu-top">
+  <div class="desktop-greetings">
+    <span class="body-medium" id="desktop-username">Guest</span>
+  </div>
+  <div class="profile-menu">
+    <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
+    <a href="#dropdown" class="dropdown-toggle"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
+    <div class="user-menu">
+      <a href="../profile/profile-filled.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
+      <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Keluar</span></a>
+    </div>
+  </div>
+  <div class="mobile-greetings">
+    <span class="caption-medium caption-medium--white">Hello,</span>
+    <span class="body-small body-small--white" id="mobile-username">Guest</span>
+  </div>
+</nav>
+  <div class="nav-divider"></div>
+</header>
     <div class="main-container">
       <aside class="container-left">
         <nav class="menu-left">
-          <a href="#dashboard" class="menu-active">
+          <a href="dashboard.html" class="menu-active">
             <img class="icon-desktop" src="../src/dashboardicon.svg" alt="Dashboard Icon">
             <img class="icon-mobile" src="../src/dashboardiconblue.svg" alt="Dashboard Icon Blue">
             <span class="body-medium body-medium--white">Dashboard</span>
           </a>
-          <a href="#transfer" class="menu-inactive"><img src="../src/transfericon.svg" alt="Transfer Icon"><span class="body-small">Transfer</span></a>
-          <a href="#history" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
-          <a href="#topup" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
-          <a href="#profile" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
-          <a href="#Keluar" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
+          <a href="../transfer/transfer1.html" class="menu-inactive"><img src="../src/transfericon.svg" alt="Transfer Icon"><span class="body-small">Transfer</span></a>
+          <a href="../history/history.html" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
+          <a href="../topup/topup.html" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
+          <a href="../profile/profile-filled.html" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
+          <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
         </nav>
       </aside>
       <div class="container-right">
@@ -97,8 +97,8 @@
             <div class="fast-service">
               <span class="body-medium body-medium--bold">Fast Service</span>
               <div class="fast-service-button">
-                <a href="#topup" class="button-active"><img src="../src/topupiconwhite.svg" alt="Top Up Icon"><span class="body-medium body-medium--white">Top Up</span></a>
-                <a href="#topup" class="button-active"><img src="../src/transfericonactive.svg" alt="Transfer Icon"><span class="body-medium body-medium--white">Transfer</span></a>
+                <a href="../topup/topup.html" class="button-active"><img src="../src/topupiconwhite.svg" alt="Top Up Icon"><span class="body-medium body-medium--white">Top Up</span></a>
+                <a href="../transfer/transfer1.html" class="button-active"><img src="../src/transfericonactive.svg" alt="Transfer Icon"><span class="body-medium body-medium--white">Transfer</span></a>
               </div>
             </div>
           </div>
@@ -124,84 +124,61 @@
           </div>
         </div>
         <div class="container-transaction">
-          <div class="transaction-header">
-            <span class="body-medium body-medium--bold">Transaction History</span>
-            <a class="caption-small" href="#alltransaction">See All</a>
-          </div>
-          <div class="card-user">
-            <img src="../src/robertfox.svg" alt="Robert Fox">
-            <div class="usernameandstatus">
-              <span class="body-medium body-medium--bold">Robert Fox</span>
-              <span class="body-medium">Transfer</span>
-            </div>
-            <span class="body-medium body-medium--bold-green">+Rp50.000</span>
-          </div>
-          <div class="card-user">
-            <img src="../src/floyd.svg" alt="Floyd">
-            <div class="usernameandstatus">
-              <span class="body-medium body-medium--bold">Floyd</span>
-              <span class="body-medium">Send</span>
-            </div>
-            <span class="body-medium body-medium--bold-red">-Rp50.000</span>
-          </div>
-          <div class="card-user">
-            <img src="../src/ujang.svg" alt="Ujang">
-            <div class="usernameandstatus">
-              <span class="body-medium body-medium--bold">Ujang</span>
-              <span class="body-medium">Send</span>
-            </div>
-            <span class="body-medium body-medium--bold-red">-Rp50.000</span>
-          </div>
-          <div class="card-user">
-            <img src="../src/raulemons.svg" alt="Raulemons">
-            <div class="usernameandstatus">
-              <span class="body-medium body-medium--bold">Raulemons</span>
-              <span class="body-medium">Transfer</span>
-            </div>
-            <span class="body-medium body-medium--bold-green">+Rp50.000</span>
-          </div>
-          <div class="card-user">
-            <img src="../src/robertfox.svg" alt="Robert Fox">
-            <div class="usernameandstatus">
-              <span class="body-medium body-medium--bold">Robert Fox</span>
-              <span class="body-medium">Transfer</span>
-            </div>
-            <span class="body-medium body-medium--bold-green">+Rp50.000</span>
-          </div>
-          <div class="card-user">
-            <img src="../src/thobie.svg" alt="Thobie">
-            <div class="usernameandstatus">
-              <span class="body-medium body-medium--bold">Thobie</span>
-              <span class="body-medium">Send</span>
-            </div>
-            <span class="body-medium body-medium--bold-red">-Rp50.000</span>
-          </div>
-          <div class="card-user">
-            <img src="../src/buzjany.svg" alt="buzjany">
-            <div class="usernameandstatus">
-              <span class="body-medium body-medium--bold">Buzjany</span>
-              <span class="body-medium">Transfer</span>
-            </div>
-            <span class="body-medium body-medium--bold-green">+Rp50.000</span>
-          </div>
-          <div class="card-user">
-            <img src="../src/adisurya.svg" alt="Adisurya">
-            <div class="usernameandstatus">
-              <span class="body-medium body-medium--bold">Adisurya</span>
-              <span class="body-medium">Send</span>
-            </div>
-            <span class="body-medium body-medium--bold-red">-Rp50.000</span>
-          </div>
-          <div class="card-user">
-            <img src="../src/miguelle.svg" alt="miguelle">
-            <div class="usernameandstatus">
-              <span class="body-medium body-medium--bold">Migulle</span>
-              <span class="body-medium">Send</span>
-            </div>
-            <span class="body-medium body-medium--bold-red">-Rp50.000</span>
-          </div>
-        </div>
-      </div>
+  <div class="transaction-header">
+    <span class="body-medium body-medium--bold">Transaction History</span>
+    <a class="caption-small" href="../history/history.html">See All</a>
+  </div>
+</div>
     </div>
+ <script src="../script/dropdown.js"></script>
+ <script>
+  async function fetchData(){
+    try{
+      const res = await fetch('https://raw.githubusercontent.com/ranandasatria/e-wallet-api/refs/heads/main/charactersList.txt')
+      const result = await res.json()
+      const allTransactions = result.map((item, index)=>({
+        img: item.img,
+        nama: item.nama,
+        nominal: 'Rp50.000',
+        nominalClass: index % 2 === 0? 'body-medium--bold-green' : 'body-medium--bold-red',
+        status: index % 2 === 0? 'Transfer' : 'Send'
+      }))
+      handleData(allTransactions)
+    }catch(error){
+      console.error('Data not found', error)
+    }
+  }
+
+  function handleData(data){
+    const containerTransaction = document.querySelector('.container-transaction')
+
+    const limitedData = data.slice(0,9)
+    limitedData.forEach(transaction =>{
+      const cardUser = document.createElement('div')
+      cardUser.classList.add('card-user')
+
+      const img = document.createElement('img')
+      img.src = transaction.img
+      img.alt = transaction.nama
+      
+      const usernameAndStatus = document.createElement('div')
+      usernameAndStatus.classList.add('usernameandstatus')
+      usernameAndStatus.innerHTML = `<span class="body-medium body-medium--bold">${transaction.nama}</span>
+      <span class="body-medium">${transaction.status}</span>`
+
+      const nominal = document.createElement('span')
+      nominal.classList.add('body-medium', transaction.nominalClass)
+      nominal.textContent = transaction.nominal
+
+      cardUser.append(img, usernameAndStatus, nominal)
+      containerTransaction.appendChild(cardUser)
+    })
+  }
+
+  fetchData()
+  
+  </script>
   </body>
 </html>
+
+

@@ -10,38 +10,41 @@
     <title>History</title>
   </head>
   <body>
-    <header class="navbar">
+    <header class="navbar nondashboard">
       <div class="logo">
         <img src="../src/logo-icon.png" alt="logo E-Wallet">
         <span>E-Wallet</span>
       </div>
-      <nav class="menu-top">
-        <div class="desktop-greetings">
-          <span class="body-medium">Galuh Wizard</span>
-        </div>
-        <div class="profile-menu">
-          <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
-          <a href="#dropdown"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
-          <div class="user-menu">
-            <a href="#profile" class="menu-item"><img src="../src/profilemenuicon.svg" alt="Profile Icon"><span class="body-medium body-medium--white"> Profile</span></a>
-            <a href="#logout" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-small body-small--red">Keluar</span></a>
-          </div>
-        </div>
-        <div class="mobile-greetings">
-          <span class="caption-medium caption-medium--white">Hello,</span>
-          <span class="body-small body-small--white">Galuh Wizard</span>
-        </div>
-      </nav>
+       <nav class="menu-top">
+  <div class="desktop-greetings">
+    <span class="body-medium" id="desktop-username">Guest</span>
+  </div>
+  <div class="profile-menu">
+    <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
+    <a href="#dropdown" class="dropdown-toggle"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
+    <div class="user-menu">
+      <a href="../profile/profile-filled.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
+      <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Keluar</span></a>
+    </div>
+  </div>
+  <div class="mobile-greetings">
+    <span class="caption-medium caption-medium--white">Hello,</span>
+    <span class="body-small body-small--white" id="mobile-username">Guest</span>
+  </div>
+</nav>
     </header>
     <div class="main-container">
       <aside class="container-left">
         <nav class="menu-left">
-          <a href="#dashboard" class="menu-inactive"><img src="../src/dashboardiconinactive.svg" alt="Dashboard Icon"><span class="body-small">Dashboard</span></a>
-          <a href="#transfer" class="menu-inactive"><img src="../src/transfericon.svg" alt="Transfer Icon"><span class="body-small">Transfer</span></a>
-          <a href="#history" class="menu-active"><img src="../src/historyiconactive.svg" alt="History Icon"><span class="body-medium body-medium--white">History</span></a>
-          <a href="#topup" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
-          <a href="#profile" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
-          <a href="#Keluar" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
+          <a href="/pages/dashboard.html" class="menu-inactive"><img src="../src/dashboardiconinactive.svg" alt="Dashboard Icon"><span class="body-small">Dashboard</span></a>
+          <a href="/transfer/transfer1.html" class="menu-inactive"><img src="../src/transfericon.svg" alt="Transfer Icon"><span class="body-small">Transfer</span></a>
+          <a href="../history/history.html" class="menu-active">
+            <img class="icon-desktop"src="../src/historyiconactive.svg" alt="History Icon">
+            <img class="icon-mobile" src="../src/historyiconblue.svg" alt="History Icon Blue">
+            <span class="body-medium body-medium--white">History</span></a>
+          <a href="../topup/topup.html" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
+          <a href="../profile/profile-filled.html" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
+          <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
         </nav>
       </aside>
       <div class="history-transaction-container-right">
@@ -50,84 +53,191 @@
           <span class="body-medium body-medium--bold">History Transaction</span>
         </div>
         <div class="find-transaction-container">
-          <div class="find-transaction-header">
-            <span class="body-medium body-medium--bold">Find Transaction</span>
-            <div class="search-bar">
-              <input class="search-bar-box" type="text" placeholder="Enter Number or Full Name">
-              <img src="../src/searchicon.svg" alt="search icon">
-            </div>
-          </div>
-          <div class="find-transaction-table">
-            <div class="table-row table-row--grey">
-              <div class="table-img"><img src="../src/galuh.svg" alt="Galuh"></div>
-              <div class="table-username"><span class="body-medium">Galuh</span></div>
-              <div class="table-phone"><span class="body-medium">082116304337</span></div>
-              <div class="table-nominal"><span class="body-small body-small--green">Rp50.000</span></div>
-              <div class="table-icon"><img src="../src/deletered24.svg" alt="icon delete"></div>
-            </div>
-            <div class="table-row table-row--white">
-              <div class="table-img"><img src="../src/cameron.svg" alt="cameron"></div>
-              <div class="table-username"><span class="body-medium">Cameron Williamson</span></div>
-              <div class="table-phone"><span class="body-medium">(308) 555-0121</span></div>
-              <div class="table-nominal"><span class="body-small body-small--red">Rp50.000</span></div>
-              <div class="table-icon"><img src="../src/deletered24.svg" alt="icon delete"></div>
-            </div>
-            <div class="table-row table-row--grey">
-              <div class="table-img"><img src="../src/cody.svg" alt="cody"></div>
-              <div class="table-username"><span class="body-medium">Cody Fisher</span></div>
-              <div class="table-phone"><span class="body-medium">(704) 555-0127</span></div>
-              <div class="table-nominal"><span class="body-small body-small--green">Rp50.000</span></div>
-              <div class="table-icon"><img src="../src/deletered24.svg" alt="icon delete"></div>
-            </div>
-            <div class="table-row table-row--white">
-              <div class="table-img"><img src="../src/kristin.svg" alt="kristin"></div>
-              <div class="table-username"><span class="body-medium">Kristin Watson</span></div>
-              <div class="table-phone"><span class="body-medium">(603) 555-0123</span></div>
-              <div class="table-nominal"><span class="body-small body-small--red">Rp50.000</span></div>
-              <div class="table-icon"><img src="../src/deletered24.svg" alt="icon delete"></div>
-            </div>
-            <div class="table-row table-row--grey">
-              <div class="table-img"><img src="../src/floyd2.svg" alt="Floyd Miles"></div>
-              <div class="table-username"><span class="body-medium">Floyd Miles</span></div>
-              <div class="table-phone"><span class="body-medium">(671) 555-0110</span></div>
-              <div class="table-nominal"><span class="body-small body-small--green">Rp50.000</span></div>
-              <div class="table-icon"><img src="../src/deletered24.svg" alt="icon delete"></div>
-            </div>
-            <div class="table-row table-row--white">
-              <div class="table-img">
-                <img src="../src/wade.svg" alt="Wade">
-              </div>
-              <div class="table-username"><span class="body-medium">Wade Warren</span></div>
-              <div class="table-phone"><span class="body-medium">(225) 555-0118</span></div>
-              <div class="table-nominal"><span class="body-small body-small--red">Rp50.000</span></div>
-              <div class="table-icon"><img src="../src/deletered24.svg" alt="icon delete"></div>
-            </div>
-            <div class="table-row table-row--grey">
-              <div class="table-img"><img src="../src/floyd2.svg" alt="Savannah"></div>
-              <div class="table-username"><span class="body-medium">Savannah Nguyen</span></div>
-              <div class="table-phone"><span class="body-medium">(217) 555-0113</span></div>
-              <div class="table-nominal"><span class="body-small body-small--green">Rp50.000</span></div>
-              <div class="table-icon"><img src="../src/deletered24.svg" alt="icon delete"></div>
-            </div>
-          </div>
-          <div class="table-caption">
-            <span class="caption-medium">Show 7 History of 100 History</span>
-            <div class="table-page-caption">
-              <span class="caption-medium">Prev</span>
-              <span class="caption-small">1</span>
-              <span class="caption-medium">2</span>
-              <span class="caption-medium">3</span>
-              <span class="caption-medium">4</span>
-              <span class="caption-medium">5</span>
-              <span class="caption-medium">6</span>
-              <span class="caption-medium">7</span>
-              <span class="caption-medium">8</span>
-              <span class="caption-medium">9</span>
-              <span class="caption-medium">Next</span>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="find-transaction-header">
+    <span class="body-medium body-medium--bold">Find Transaction</span>
+    <div class="search-bar">
+      <input class="search-bar-box" type="text" placeholder="Enter Number or Full Name">
+      <img src="../src/searchicon.svg" alt="search icon">
     </div>
+  </div>
+  <table class="find-transaction-table"></table>
+  <div class="table-caption"></div>
+</div>
+ </div>
+
+    </div>
+
+    <script src="../script/dropdown.js"></script>
+    <script>
+let allTransactions = []
+
+async function fetchData() {
+  try {
+    const res = await fetch('https://raw.githubusercontent.com/ranandasatria/e-wallet-api/refs/heads/main/charactersList.txt')
+    const result = await res.json()
+    allTransactions = result.map((item, index) => ({
+      img: item.img,
+      nama: item.nama,
+      phone: item.phone,
+      nominal: 'Rp50.000',
+      nominalClass: index % 2 === 0 ? 'body-small--green' : 'body-small--red'
+    }));
+    renderTransactions(allTransactions)
+  } catch (error) {
+    console.error('Data not found:', error)
+  }
+}
+
+function renderTransactions(data) {
+  const table = document.querySelector('.find-transaction-table')
+  table.innerHTML = ''
+
+  data.forEach(transaction => {
+    const tableRow = document.createElement('tr')
+    tableRow.classList.add('table-row')
+
+    const imgCell = document.createElement('td')
+    imgCell.classList.add('table-img', 'history-table-img')
+    const img = document.createElement('img')
+    img.src = transaction.img
+    img.alt = transaction.nama
+    img.classList.add('profile-img')
+    imgCell.appendChild(img)
+
+    const usernameCell = document.createElement('td')
+    usernameCell.classList.add('table-username')
+    usernameCell.innerHTML = `<span class="body-medium">${transaction.nama}</span>`
+
+    const phoneCell = document.createElement('td')
+    phoneCell.classList.add('table-phone')
+    phoneCell.innerHTML = `<span class="body-medium">${transaction.phone}</span>`
+
+    const nominalCell = document.createElement('td')
+    nominalCell.classList.add('table-nominal')
+    nominalCell.innerHTML = `<span class="body-small ${transaction.nominalClass}">${transaction.nominal}</span>`
+
+    const iconCell = document.createElement('td')
+    iconCell.classList.add('table-icon', 'table-delete-icon')
+    const deleteImg = document.createElement('img')
+    deleteImg.src = '../src/deletered24.svg'
+    deleteImg.alt = 'icon delete'
+    deleteImg.classList.add('delete-img')
+    iconCell.appendChild(deleteImg)
+
+    tableRow.append(imgCell, usernameCell, phoneCell, nominalCell, iconCell)
+    table.appendChild(tableRow)
+
+    tableRow.addEventListener('click', () => showPopup(transaction));
+  });
+}
+
+function showPopup(transaction) {
+  const modalBackground = document.createElement('div')
+  modalBackground.classList.add('modal-background', 'history')
+
+  const popupModal = document.createElement('div')
+  popupModal.classList.add('popup-modal')
+
+  const popupHeader = document.createElement('div')
+  popupHeader.classList.add('popup-header')
+  const headerText = document.createElement('span')
+  headerText.classList.add('caption-medium')
+  headerText.textContent = `Detail Transaction ${transaction.nama}`
+  popupHeader.appendChild(headerText)
+
+  const divider = document.createElement('div')
+  divider.classList.add('popup-divider')
+
+  const popupImg = document.createElement('img')
+  popupImg.classList.add('popup-img')
+  popupImg.src = transaction.img
+  popupImg.alt = transaction.nama
+
+  const nameContainer = document.createElement('div')
+  nameContainer.classList.add('popup-detail')
+  const nameLabel = document.createElement('span')
+  nameLabel.classList.add('body-medium')
+  nameLabel.textContent = 'Name:'
+  const nameValue = document.createElement('span')
+  nameValue.classList.add('body-medium')
+  nameValue.textContent = transaction.nama
+  nameContainer.append(nameLabel, nameValue)
+
+  const phoneContainer = document.createElement('div')
+  phoneContainer.classList.add('popup-detail')
+  const phoneLabel = document.createElement('span')
+  phoneLabel.classList.add('body-medium')
+  phoneLabel.textContent = 'Phone:'
+  const phoneValue = document.createElement('span')
+  phoneValue.classList.add('body-medium')
+  phoneValue.textContent = transaction.phone
+  phoneContainer.append(phoneLabel, phoneValue)
+
+  const statusContainer = document.createElement('div')
+  statusContainer.classList.add('popup-detail')
+  const statusLabel = document.createElement('span')
+  statusLabel.classList.add('body-medium')
+  statusLabel.textContent = 'Status:'
+  const statusValue = document.createElement('span')
+  statusValue.classList.add('body-medium')
+  statusValue.textContent = 'Transfer success'
+  statusContainer.append(statusLabel, statusValue)
+
+  const amountContainer = document.createElement('div')
+  amountContainer.classList.add('popup-detail')
+  const amountLabel = document.createElement('span')
+  amountLabel.classList.add('body-medium')
+  amountLabel.textContent = 'Amount:'
+  const amountValue = document.createElement('span')
+  amountValue.classList.add('body-medium')
+  amountValue.textContent = transaction.nominal
+  amountContainer.append(amountLabel, amountValue)
+
+  const deleteButton = document.createElement('button')
+  deleteButton.classList.add('button-danger')
+  deleteButton.textContent = 'Delete'
+
+  const backButton = document.createElement('button')
+  backButton.classList.add('button-primary')
+  backButton.textContent = 'Back'
+  backButton.addEventListener('click', () => {
+    modalBackground.remove()
+  });
+
+  popupModal.append(
+    popupHeader,
+    divider,
+    popupImg,
+    nameContainer,
+    phoneContainer,
+    statusContainer,
+    amountContainer,
+    deleteButton,
+    backButton
+  );
+
+  const historyContainer = document.querySelector('.history-transaction-container-right')
+  modalBackground.appendChild(popupModal)
+  historyContainer.append(modalBackground)
+}
+
+function filterData() {
+  const searchInput = document.querySelector('.search-bar-box')
+ 
+  const searchTerm = searchInput.value.toLowerCase()
+  const filteredData = allTransactions.filter(transaction =>
+    transaction.nama.toLowerCase().includes(searchTerm) ||
+    transaction.phone.includes(searchTerm)
+  )
+  renderTransactions(filteredData)
+}
+
+const searchInput = document.querySelector('.search-bar-box');
+if (searchInput) {
+  searchInput.addEventListener('input', filterData);
+}
+
+fetchData()
+    </script>
   </body>
 </html>

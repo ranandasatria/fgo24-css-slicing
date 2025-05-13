@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="min-h-screen">
+    <div class="h-24 flex justify-between items-center shadow-lg px-10 border-b-1 border-gray-400">
+    <div>Ewallet</div>
+    <div class="flex items-center gap-[12px]">
+      <img class="rounded-full size-12 bg-black text-white" src="../src/galuh.svg" alt="profile">
+      <div>
+        <div>Ghaluh Wizard</div>
+        <div>
+          <i data-lucide = "chevron-down"></i>
+        </div>
+      </div>
+    </div>
+    </div>
+  <div class="main flex min-h-full">
+    <div class="sidebar w-full md:w-64 h-auto md:h-[948px] border-t md:border-t-0 md:border-r border-gray-200 p-6 md:p-10 flex md:flex-col fixed md:static bottom-0 left-0 bg-white z-50"
+>
+<nav class="menu-left flex flex-col gap-[12px] justify-around">
+          <a href="dashboard.html" class="flex flex-col md:flex-row items-center gap-2 md:gap-2 px-2 py-1 md:p-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">
+           <i data-lucide = "layout-dashboard"></i>
+            <span class="body-medium body-medium--white">Dashboard</span>
+          </a>
+
+          <a href="transfer.thml" class="flex flex-col md:flex-row items-center gap-2 md:gap-2 px-2 py-1 md:p-2 rounded-md bg-white text-gray-700">
+            <i data-lucide="send"></i>
+            <span>Transfer</span>
+          </a>
+          
+          <a href="history.html" class="flex flex-col md:flex-row items-center gap-2 md:gap-2 px-2 py-1 md:p-2 rounded-md bg-white text-gray-700">
+            <i data-lucide="history"></i>
+            <span>History</span>
+          </a>
+
+              <a href="wallet.html" class="flex flex-col md:flex-row items-center gap-2 md:gap-2 px-2 py-1 md:p-2 rounded-md bg-white text-gray-700">
+            <i data-lucide="wallet"></i>
+            <span>Top Up</span>
+          </a>
+
+              <a href="profile.html" class="flex flex-col md:flex-row items-center gap-2 md:gap-2 px-2 py-1 md:p-2 rounded-md bg-white text-gray-700">
+            <i data-lucide="user"></i>
+            <span>Profile</span>
+          </a>
+
+              <a href="index.html" class="flex flex-col md:flex-row items-center gap-2 md:gap-2 px-2 py-1 md:p-2 rounded-md bg-white text-gray-700">
+            <i class="bg-white" data-lucide="log-out"></i>
+            <span class="text-red-700">Keluar</span>
+          </a>
+          
+
+
+
+        </nav>
+
+
+</div>
+    
+    
+    
+    
+    <div class="container-right"></div>
+
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+         lucide.createIcons();
+  </script>
+</body>
+</html>

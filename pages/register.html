@@ -32,36 +32,30 @@
                 <div class="divider">Or</div>
 
                 <form class="register-form">
-                    
                     <label for="email"><span>Email</span></label><br>
-
                     <div class="input-row">
-  <img src="/src/email16icon.svg" alt="email">
-  <input type="email" id="email" name="email" placeholder="Enter Your Email">
-</div>
-<div class="error-message" id="emailError"></div>
-                    
+                        <img src="/src/email16icon.svg" alt="email">
+                        <input type="email" id="email" name="email" placeholder="Enter Your Email">
+                    </div>
+                    <div class="error-message" id="emailError"></div>
 
                     <label for="password"><span>Password</span></label><br>
-
-                  <div class="input-row">
-  <img src="/src/passwordicon16.svg" alt="password">
-  <input type="password" id="password" name="password" placeholder="Enter Your Password">
-  <img class="toggle-password" src="/src/eyeopen.svg" alt="Toggle Password">
-</div>
-<div class="error-message" id="passwordError"></div>
-
+                    <div class="input-row">
+                        <img src="/src/passwordicon16.svg" alt="password">
+                        <input type="password" id="password" name="password" placeholder="Enter Your Password">
+                        <img class="toggle-password" src="/src/eyeopen.svg" alt="Toggle Password">
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
 
                     <label for="confirmPassword"><span>Confirm Password</span></label><br>
-                   <div class="input-row">
-  <img src="/src/passwordicon16.svg" alt="confirm password">
-  <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Your Password Again">
-  <img class="toggle-password" src="/src/eyeopen.svg" alt="Toggle Password">
-</div>
-<div class="error-message" id="confirmPasswordError"></div>
+                    <div class="input-row">
+                        <img src="/src/passwordicon16.svg" alt="confirm password">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter Your Password Again">
+                        <img class="toggle-password" src="/src/eyeopen.svg" alt="Toggle Password">
+                    </div>
+                    <div class="error-message" id="confirmPasswordError"></div>
 
                     <button class="btn-register" type="submit"><span>Register</span></button>
-                    
                 </form> 
                 <span class="login-link">Have an Account? <a href="login.html">Login</a></span>
             </div>
@@ -71,89 +65,59 @@
             <img src="../src/wallet.png" alt="wallet">
         </div>
     </main>
- <div id="successModal" class="modal">
-  <div class="modal-content">
-     <img src="/src/handshake1.png" alt="Success" class="success-icon" />
-    <h2>Thank you for signing up!</h2>
-    <p>Redirecting you to login page...</p>
-  </div>
-</div>
-
+<script src="../script/showandhidepassword.js"></script>
+       
 <script>
-document.querySelectorAll('.input-row').forEach(function (row) {
-  const input = row.querySelector('input[type="password"]')
-  const toggle = row.querySelector('.toggle-password')
+    document.querySelector('.register-form').addEventListener('submit', function(e){
+        e.preventDefault()
 
-  if (!input || !toggle) return
+        const emailInput = document.getElementById('email')
+        const passwordInput = document.getElementById('password')
+        const confirmPasswordInput = document.getElementById('confirmPassword')
+        const emailError = document.getElementById('emailError')
+        const passwordError = document.getElementById('passwordError')
+        const confirmPasswordError = document.getElementById('confirmPasswordError')
 
-  toggle.addEventListener('click', function () {
-    const isPassword = input.getAttribute('type') === 'password'
-    input.setAttribute('type', isPassword ? 'text' : 'password')
-    toggle.setAttribute('src', isPassword ? '/src/eyeclose.svg' : '/src/eyeopen.svg')
-  })
-})
+        emailError.textContent = ''
+        passwordError.textContent = ''
+        confirmPasswordError.textContent = ''
 
-document.querySelector('.register-form').addEventListener('submit', function (e) {
-  e.preventDefault()
+        let isValid = true
 
-  const emailInput = document.getElementById('email')
-  const passwordInput = document.getElementById('password')
-  const confirmPasswordInput = document.getElementById('confirmPassword')
+        if (!emailInput.value.trim()){
+            emailError.textContent = 'Enter your email.'
+            isValid = false
+        }
 
-  const emailError = document.getElementById('emailError')
-  const passwordError = document.getElementById('passwordError')
-  const confirmPasswordError = document.getElementById('confirmPasswordError')
+        if (!passwordInput.value){
+            passwordError.textContent = 'Enter your password.'
+            isValid = false
+        }else if (passwordInput.value.length < 6){
+            passwordError.textContent = 'Minimun 6 characters.'
+            isValid = false
+        }
 
-  emailError.textContent = ''
-  passwordError.textContent = ''
-  confirmPasswordError.textContent = ''
+         if (!confirmPasswordInput.value) {
+            confirmPasswordError.textContent = 'Confirm your password.'
+            isValid = false
+        } else if (passwordInput.value !== confirmPasswordInput.value) {
+            confirmPasswordError.textContent = "Password confirmation doesn't match."
+            isValid = false
+        }
 
-  let isValid = true
+        if (isValid){
+            const username = emailInput.value.split('@')[0].trim() || 'user'
+            const user = {
+                email: emailInput.value.trim(),
+                password: passwordInput.value,
+                username: username
+            }
 
-  if (!emailInput.value.trim()) {
-    emailError.textContent = 'Email wajib diisi.'
-    isValid = false
-  }
-
-  if (!passwordInput.value) {
-    passwordError.textContent = 'Password wajib diisi.'
-    isValid = false
-  } else if (passwordInput.value.length < 6) {
-    passwordError.textContent = 'Password minimal 6 karakter.'
-    isValid = false
-  }
-
-  if (!confirmPasswordInput.value) {
-    confirmPasswordError.textContent = 'Konfirmasi password wajib diisi.'
-    isValid = false
-  } else if (passwordInput.value !== confirmPasswordInput.value) {
-    confirmPasswordError.textContent = 'Konfirmasi password tidak cocok.'
-    isValid = false
-  }
-
-  if (isValid) {
-    const user = {
-      email: emailInput.value.trim(),
-      password: passwordInput.value
-    }
-
-    localStorage.setItem('userData', JSON.stringify(user))
-    document.querySelector('.register-form').reset()
-
-    const modal = document.getElementById("successModal")
-    modal.style.display = "flex"
-    modal.style.opacity = "1"
-
-    setTimeout(() => {
-      modal.style.opacity = "0"
-    }, 2500)
-
-    setTimeout(() => {
-      modal.style.display = "none"
-      window.location.href = "login.html"
-    }, 3000)
-  }
-})
+            localStorage.setItem('userData', JSON.stringify(user))
+            document.querySelector('.register-form').reset()
+            window.location.href = 'create_pin.html'
+        }
+    })
 </script>
 </body>
 </html>

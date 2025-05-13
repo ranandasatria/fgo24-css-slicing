@@ -240,9 +240,9 @@ input[type="text"] {
 
 .pin-row-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 191px;
 }
 
@@ -253,7 +253,7 @@ input[type="text"] {
   justify-content: center;
 }
 
-input[type="number"].pin-input {
+#pin1, input[type="number"].pin-input {
   width: 50px;
   height: 50px;
   font-size: 30px;
@@ -265,12 +265,19 @@ input[type="number"].pin-input {
   color: black;
 }
 
-input[type="number"].pin-input:focus {
+#pin1:focus, input[type="number"].pin-input:focus {
   outline: none;
-  border-bottom: 2px solid #007bff;
+  /* border-bottom: 2px solid #007bff; */
+  outline-color: #0B132A;
 }
 
-input[type="number"].pin-input::placeholder {
+#pin1:focus{
+  border-bottom: 2px solid #007bff;
+  /* border-width: 24px; */
+  ;
+}
+
+#pin1::placeholder, input[type="number"].pin-input::placeholder {
   color: #999;
   font-size: 24px;
   text-align: center;
@@ -281,6 +288,11 @@ input[type="number"].pin-input::-webkit-inner-spin-button,
 input[type="number"].pin-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+#pin1 {
+  width: 100%;
+  letter-spacing: 33px;
 }
 
 .btn-register {
@@ -317,6 +329,14 @@ input[type="number"].pin-input::-webkit-outer-spin-button {
 .login-link a {
   color: #2948FF;
   text-decoration: none;
+}
+
+.forgot-link {
+  text-decoration: none;
+  color: #2948FF;
+  font-size: 14px;
+  margin-top: -4px;
+  text-align: right;
 }
 
 .container-right-img {
@@ -370,6 +390,24 @@ input::placeholder {
   /* margin-top: 4px;
   margin-bottom: 10px; */
 }
+
+.toast-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1EC15F; 
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  z-index: 1000;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
 .modal {
   display: none;
   position: fixed;
@@ -406,10 +444,6 @@ input::placeholder {
   width: 270px;
   height: 270px;
 }
-
-
-
-
 
 @media (max-width: 768px) {
   main {

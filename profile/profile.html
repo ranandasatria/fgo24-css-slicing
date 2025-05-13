@@ -10,38 +10,41 @@
     <title>Profile</title>
   </head>
   <body>
-    <header class="navbar">
+    <header class="navbar nondashboard">
       <div class="logo">
         <img src="../src/logo-icon.png" alt="logo E-Wallet">
         <span>E-Wallet</span>
       </div>
-      <nav class="menu-top">
-        <div class="desktop-greetings">
-          <span class="body-medium">Galuh Wizard</span>
-        </div>
-        <div class="profile-menu">
-          <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
-          <a href="#dropdown"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
-          <div class="user-menu">
-            <a href="#profile" class="menu-item"><img src="../src/profilemenuicon.svg" alt="Profile Icon"><span class="body-medium body-medium--white"> Profile</span></a>
-            <a href="#logout" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-small body-small--red">Keluar</span></a>
-          </div>
-        </div>
-        <div class="mobile-greetings">
-          <span class="caption-medium caption-medium--white">Hello,</span>
-          <span class="body-small body-small--white">Galuh Wizard</span>
-        </div>
-      </nav>
+     <nav class="menu-top">
+  <div class="desktop-greetings">
+    <span class="body-medium" id="desktop-username">Guest</span>
+  </div>
+  <div class="profile-menu">
+    <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
+    <a href="#dropdown" class="dropdown-toggle"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
+    <div class="user-menu">
+      <a href="../profile/profile-filled.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
+      <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Keluar</span></a>
+    </div>
+  </div>
+  <div class="mobile-greetings">
+    <span class="caption-medium caption-medium--white">Hello,</span>
+    <span class="body-small body-small--white" id="mobile-username">Guest</span>
+  </div>
+</nav>
     </header>
     <div class="main-container">
       <aside class="container-left">
-        <nav class="menu-left">
+       <nav class="menu-left">
           <a href="/pages/dashboard.html" class="menu-inactive"><img src="../src/dashboardiconinactive.svg" alt="Dashboard Icon"><span class="body-small">Dashboard</span></a>
           <a href="#transfer" class="menu-inactive"><img src="../src/transfericon.svg" alt="Transfer Icon"><span class="body-small">Transfer</span></a>
-          <a href="#history" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
-          <a href="#topup" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
-          <a href="#profile" class="menu-active"><img src="../src/menuprofileactive24.svg" alt="Menu Profile Icon"><span class="body-medium body-medium--white">Profile</span></a>
-          <a href="#Keluar" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
+          <a href="../history/history.html" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
+          <a href="../topup/topup.html" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
+          <a href="profile-filled.html" class="menu-active">
+            <img class="icon-desktop" src="../src/menuprofileactive24.svg" alt="Menu Profile Icon">
+            <img class="icon-mobile" src="../src/menuprofileblue.svg" alt="Menu Profile Blue">
+            <span class="body-medium body-medium--white">Profile</span></a>
+          <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
         </nav>
       </aside>
       <div class="history-transaction-container-right">
@@ -95,5 +98,6 @@
         </div>
       </div>
     </div>
+     <script src="../script/dropdown.js"></script>
   </body>
 </html>

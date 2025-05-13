@@ -169,11 +169,11 @@
           <div class="contact-item-container">
             <div class="contact-item">
               <img src="src/phone-icon-white.svg" alt="Phone Icon">
-              <span class="body-medium body-medium--white">+62 5637 8882 9901</span>
+              <a href="https://wa.me/6282133757091" target="_blank" class="body-medium body-medium--white">+62 5637 8882 9901</a>
             </div>
             <div class="contact-item">
               <img src="src/email-icon-white.svg" alt="Email Icon">
-              <span class="body-medium body-medium--white">contact@zwallet.com</span>
+              <a href="mailto:contact@zwallet.com" target="_blank" class="body-medium body-medium--white">contact@zwallet.com</a>
             </div>
           </div>
         </div>
@@ -187,22 +187,47 @@
           </div>
         </div>
         <div class="footer-newsletter">
-          <span class="body-large--bold body-large--bold--white">NEWSLETTER</span>
-          <form class="newsletter-input">
-            <div class="input-row">
-              <img src="../src/email16icon.svg" alt="email">
-              <input type="email" id="email" name="email" placeholder="Enter Your Email">
-            </div>
-            <a href="#" class="button-secondary"><span class="body-small body-small--semibold--blue">Subscribe</span></a>
-          </form>
-        </div>
+  <span class="body-large--bold body-large--bold--white">NEWSLETTER</span>
+  <form class="newsletter-input">
+    <div class="input-row">
+      <img src="../src/email16icon.svg" alt="email">
+      <input type="email" id="email" name="email" placeholder="Enter Your Email">
+    </div>
+    <div class="error-message" id="emailError"></div>
+    <button type="submit" class="button-secondary"><span class="body-small body-small--semibold--blue">Subscribe</span></button>
+  </form>
+</div>
       </div>
       </div>
       <div class="footer-divider"></div>
       <span class="body-small body-small--white">© Copyright 2022. Reserved Clarity</span>
       </div>
-      <script src="script/script.js"></script>
+      <script src="script/hamburger.js"></script>
+      <script src="script/toast.js"></script>   
+      <script>
+        document.addEventListener('DOMContentLoaded', function(){
+          document.querySelector('.newsletter-input').addEventListener('submit', function (e){
+            e.preventDefault()
+
+            const emailInput = document.getElementById('email')
+            const emailError = document.getElementById('emailError')
+
+            emairError.textContent = ''
+
+            let isValid = true
+
+            if(!emailInput.value.trim()){
+              emailError.textContent = 'Enter your email.'
+              isValid = false
+
+              if(isValid){
+                document.querySelector('.newsletter-input').reset()
+                showToast('Subscribed successfully!')
+              }
+            }
+          })
+        })
+      </script>
     </footer>
   </body>
 </html>
-

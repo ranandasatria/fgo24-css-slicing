@@ -10,38 +10,41 @@
     <title>Transfer</title>
   </head>
   <body>
-    <header class="navbar">
+    <header class="navbar nondashboard">
       <div class="logo">
         <img src="../src/logo-icon.png" alt="logo E-Wallet">
         <span>E-Wallet</span>
       </div>
       <nav class="menu-top">
-        <div class="desktop-greetings">
-          <span class="body-medium">Galuh Wizard</span>
-        </div>
-        <div class="profile-menu">
-          <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
-          <a href="#dropdown"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
-          <div class="user-menu">
-            <a href="#profile" class="menu-item"><img src="../src/profilemenuicon.svg" alt="Profile Icon"><span class="body-medium body-medium--white"> Profile</span></a>
-            <a href="#logout" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-small body-small--red">Keluar</span></a>
-          </div>
-        </div>
-        <div class="mobile-greetings">
-          <span class="caption-medium caption-medium--white">Hello,</span>
-          <span class="body-small body-small--white">Galuh Wizard</span>
-        </div>
-      </nav>
+  <div class="desktop-greetings">
+    <span class="body-medium" id="desktop-username">Guest</span>
+  </div>
+  <div class="profile-menu">
+    <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
+    <a href="#dropdown" class="dropdown-toggle"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
+    <div class="user-menu">
+      <a href="../profile/profile-filled.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
+      <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Keluar</span></a>
+    </div>
+  </div>
+  <div class="mobile-greetings">
+    <span class="caption-medium caption-medium--white">Hello,</span>
+    <span class="body-small body-small--white" id="mobile-username">Guest</span>
+  </div>
+</nav>
     </header>
     <div class="main-container">
       <aside class="container-left">
         <nav class="menu-left">
           <a href="/pages/dashboard.html" class="menu-inactive"><img src="../src/dashboardiconinactive.svg" alt="Dashboard Icon"><span class="body-small">Dashboard</span></a>
-          <a href="#transfer" class="menu-active"><img src="../src/transfericonactive.svg" alt="Transfer Icon"><span class="body-medium body-medium--white">Transfer</span></a>
-          <a href="#history" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
-          <a href="#topup" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
-          <a href="#profile" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
-          <a href="#Keluar" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
+          <a href="#transfer" class="menu-active">
+            <img class="icon-desktop" src="../src/transfericonactive.svg" alt="Transfer Icon">
+            <img class="icon-mobile" src="../src/transfericonblue.svg" alt="Transfer Icon Blue">
+            <span class="body-medium body-medium--white">Transfer</span></a>
+          <a href="/history/history.html" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
+          <a href="/topup/topup.html" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
+          <a href="/profile/profile-filled.html" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
+          <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
         </nav>
       </aside>
       <div class="history-transaction-container-right">
@@ -65,63 +68,117 @@
             <span class="body-medium">Finish</span>
           </div>
         </div>
-        <div class="find-transaction-container">
-          <div class="find-transaction-header">
-            <div class="find-people-header">
-              <span class="body-medium body-medium--bold">Find People</span>
-              <span class="caption-medium">8 Result Found for Galuh</span>
-            </div>
-            <div class="search-bar">
-              <input class="search-bar-box" type="text" placeholder="Enter Number or Full Name">
-              <img src="../src/searchicon.svg" alt="search icon">
-            </div>
-          </div>
-          <div class="find-transaction-table">
-            <div class="table-row table-row--grey">
-              <div class="table-img"><img src="../src/galuh.svg" alt="Galuh"></div>
-              <div class="table-username"><span class="body-medium">Galuh</span></div>
-              <div class="table-phone"><span class="body-medium">082116304337</span></div>
-              <div class="table-icon"><img src="../src/stariconinactive.svg" alt="icon star"></div>
-            </div>
-            <div class="table-row table-row--white">
-              <div class="table-img"><img src="../src/cameron.svg" alt="cameron"></div>
-              <div class="table-username"><span class="body-medium">Galuh</span></div>
-              <div class="table-phone"><span class="body-medium">(308) 555-0121</span></div>
-              <div class="table-icon"><img src="../src/stariconinactive.svg" alt="icon star"></div>
-            </div>
-            <div class="table-row table-row--grey">
-              <div class="table-img"><img src="../src/cody.svg" alt="cody"></div>
-              <div class="table-username"><span class="body-medium">Galuh</span></div>
-              <div class="table-phone"><span class="body-medium">(704) 555-0127</span></div>
-              <div class="table-icon"><img src="../src/stariconinactive.svg" alt="icon star"></div>
-            </div>
-            <div class="table-row table-row--white">
-              <div class="table-img"><img src="../src/kristin.svg" alt="kristin"></div>
-              <div class="table-username"><span class="body-medium">Galuh</span></div>
-              <div class="table-phone"><span class="body-medium">(603) 555-0123</span></div>
-              <div class="table-icon"><img src="../src/stariconinactive.svg" alt="icon star"></div>
-            </div>
-            <div class="table-row table-row--grey">
-              <div class="table-img"><img src="../src/floyd2.svg" alt="Floyd Miles"></div>
-              <div class="table-username"><span class="body-medium">Galuh</span></div>
-              <div class="table-phone"><span class="body-medium">(671) 555-0110</span></div>
-              <div class="table-icon"><img src="../src/stariconinactive.svg" alt="icon star"></div>
-            </div>
-            <div class="table-row table-row--white">
-              <div class="table-img"><img src="../src/wade.svg" alt="Wade"></div>
-              <div class="table-username"><span class="body-medium">Galuh</span></div>
-              <div class="table-phone"><span class="body-medium">(225) 555-0118</span></div>
-              <div class="table-icon"><img src="../src/stariconinactive.svg" alt="icon star"></div>
-            </div>
-            <div class="table-row table-row--grey">
-              <div class="table-img"><img src="../src/floyd2.svg" alt="Savannah"></div>
-              <div class="table-username"><span class="body-medium">Galuh</span></div>
-              <div class="table-phone"><span class="body-medium">(217) 555-0113</span></div>
-              <div class="table-icon"><img src="../src/stariconinactive.svg" alt="icon star"></div>
-            </div>
-          </div>
-        </div>
+       <div class="find-transaction-container">
+  <div class="find-transaction-header">
+    <div class="find-people-header">
+      <span class="body-medium body-medium--bold">Find People</span>
+      <span class="caption-medium"></span>
+    </div>
+    <div class="search-bar">
+      <input class="search-bar-box" type="text" placeholder="Enter Number or Full Name">
+      <img src="../src/searchicon.svg" alt="search icon">
+    </div>
+  </div>
+  <table class="find-transaction-table"></table>
+</div>
       </div>
     </div>
+     <script src="../script/dropdown.js"></script>
+    <script>
+let allCharacters = []
+
+async function fetchData() {
+  try {
+    const res = await fetch('https://raw.githubusercontent.com/ranandasatria/e-wallet-api/refs/heads/main/charactersList.txt');
+    const result = await res.json();
+    allCharacters = result;
+    handleData(allCharacters);
+  } catch (error) {
+    console.error('Data not found', error);
+  }
+}
+
+function handleData(data) {
+  const table = document.querySelector('.find-transaction-table');
+  table.innerHTML = ''
+
+  data.forEach(character => {
+    const tableRow = document.createElement('tr')
+    tableRow.classList.add('table-row')
+    tableRow.style.cursor = 'pointer'
+
+    const imgCell = document.createElement('td')
+    imgCell.classList.add('table-img')
+    const img = document.createElement('img')
+    img.src = character.img
+    img.alt = character.nama
+    img.classList.add('profile-img')
+    imgCell.appendChild(img)
+
+    const usernamePhoneCell = document.createElement('td')
+    usernamePhoneCell.classList.add('container-username-phone')
+
+    const username = document.createElement('div')
+    username.classList.add('table-username')
+    username.innerHTML = `<span class="body-medium">${character.nama}</span>`
+
+    const phone = document.createElement('div')
+    phone.classList.add('table-phone')
+    phone.innerHTML = `<span class="body-medium">${character.phone}</span>`
+
+    usernamePhoneCell.append(username, phone);
+
+    const iconCell = document.createElement('td')
+    iconCell.classList.add('table-icon')
+    const starImg = document.createElement('img')
+    starImg.src = '../src/stariconinactive.svg'
+    starImg.alt = 'icon star'
+    starImg.classList.add('star-img')
+    iconCell.appendChild(starImg)
+
+    tableRow.append(imgCell, usernamePhoneCell, iconCell)
+    table.appendChild(tableRow)
+
+    tableRow.addEventListener('click', () => {
+      const encodedNama = btoa(character.nama)
+      const encodedPhone = btoa(character.phone)
+      const encodedImg = btoa(character.img)
+      window.location.href = `transfer2.html?nama=${encodedNama}&phone=${encodedPhone}&img=${encodedImg}`
+    })
+  })
+}
+
+function updateResultCount(count, searchTerm) {
+  const header = document.querySelector('.find-people-header')
+
+  const existingCaption = document.querySelector('.caption-medium')
+  if (existingCaption) {
+    existingCaption.remove()
+  }
+
+  if (searchTerm !== '') {
+    const resultCount = document.createElement('span')
+    resultCount.classList.add('caption-medium')
+    resultCount.textContent = `${count} Result Found`
+    header.appendChild(resultCount)
+  }
+}
+
+function filterData() {
+  const searchInput = document.querySelector('.search-bar-box')
+  const searchTerm = searchInput.value.toLowerCase()
+  const filteredData = allCharacters.filter(character =>
+    character.nama.toLowerCase().includes(searchTerm) ||
+    character.phone.includes(searchTerm)
+  );
+  handleData(filteredData)
+  updateResultCount(filteredData.length, searchTerm)
+}
+
+const searchInput = document.querySelector('.search-bar-box')
+searchInput.addEventListener('input', filterData)
+
+fetchData()
+    </script>
   </body>
 </html>

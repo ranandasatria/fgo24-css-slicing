@@ -10,92 +10,279 @@
     <title>Transfer</title>
   </head>
   <body>  
-    <header class="navbar">
+    <header class="navbar nondashboard">
       <div class="logo">
         <img src="../src/logo-icon.png" alt="logo E-Wallet">
         <span>E-Wallet</span>
       </div>
       <nav class="menu-top">
-        <div class="desktop-greetings">
-          <span class="body-medium">Galuh Wizard</span>
-        </div>
-        <div class="profile-menu">
-          <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
-          <a href="#dropdown"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
-          <div class="user-menu">
-            <a href="#profile" class="menu-item"><img src="../src/profilemenuicon.svg" alt="Profile Icon"><span class="body-medium body-medium--white"> Profile</span></a>
-            <a href="#logout" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-small body-small--red">Keluar</span></a>
-          </div>
-        </div>
-        <div class="mobile-greetings">
-          <span class="caption-medium caption-medium--white">Hello,</span>
-          <span class="body-small body-small--white">Galuh Wizard</span>
-        </div>
-      </nav>
+  <div class="desktop-greetings">
+    <span class="body-medium" id="desktop-username">Guest</span>
+  </div>
+  <div class="profile-menu">
+    <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
+    <a href="#dropdown" class="dropdown-toggle"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
+    <div class="user-menu">
+      <a href="../profile/profile-filled.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
+      <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Keluar</span></a>
+    </div>
+  </div>
+  <div class="mobile-greetings">
+    <span class="caption-medium caption-medium--white">Hello,</span>
+    <span class="body-small body-small--white" id="mobile-username">Guest</span>
+  </div>
+</nav>
     </header>
     <div class="main-container">
-    <aside class="container-left">
-      <nav class="menu-left">
-        <a href="/pages/dashboard.html" class="menu-inactive"><img src="../src/dashboardiconinactive.svg" alt="Dashboard Icon"><span class="body-small">Dashboard</span></a>
-        <a href="#transfer" class="menu-active"><img src="../src/transfericonactive.svg" alt="Transfer Icon"><span class="body-medium body-medium--white">Transfer</span></a>
-        <a href="#history" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
-        <a href="#topup" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
-        <a href="#profile" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
-        <a href="#Keluar" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
-      </nav>
-    </aside>
-    <div class="history-transaction-container-right">
-      <div class="page-title">
-        <img src="../src/transfericonblue.svg" alt="history icon">
-        <span class="body-medium body-medium--bold">Transfer Money</span>
-      </div>
-      <div class="stepper-container">
-        <div class="stepper">
-          <img src="../src/number1icongrey.svg" alt="number1icon">
-          <span class="body-medium">Find People</span>
+      <aside class="container-left">
+        <nav class="menu-left">
+          <a href="/pages/dashboard.html" class="menu-inactive"><img src="../src/dashboardiconinactive.svg" alt="Dashboard Icon"><span class="body-small">Dashboard</span></a>
+          <a href="#transfer" class="menu-active">
+            <img class="icon-desktop" src="../src/transfericonactive.svg" alt="Transfer Icon">
+            <img class="icon-mobile" src="../src/transfericonblue.svg" alt="Transfer Icon Blue">
+            <span class="body-medium body-medium--white">Transfer</span></a>
+          <a href="/history/history.html" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
+          <a href="/topup/topup.html" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
+          <a href="/profile/profile-filled.html" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
+          <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
+        </nav>
+      </aside>
+      <div class="history-transaction-container-right">
+        <!-- Popup untuk Enter PIN -->
+        <div class="modal-background" id="pinPopup" style="display: none;">
+          <div class="popup-modal">
+            <div class="popup-header">
+              <span class="body-medium body-medium--bold">TRANSFER TO <span id="recipientName">GHALUH 1</span></span>
+            </div>
+            <div class="popup-modal-main-container">
+              <div class="popup-modal-main popup-pin">
+                <span class="heading-medium heading-medium--semibold">Enter Your Pin 👋</span>
+                <span class="body-medium">Enter Your Pin For Transaction</span>
+                <form class="enter-pin">
+                  <div class="pin-row-container">
+                    <div class="enter-pin-row">
+                      <input type="number" oninput="if(this.value.length > 6) this.value = this.value.slice(0,6)" onkeydown="return event.keyCode !== 69" id="pin1" name="pin1" class="pin-input">
+                    </div>
+                    <div class="error-message" id="pinError"></div>
+                  </div>
+                  <button class="btn-submit" type="submit"><span class="body-medium body-medium--white">Next</span></button>
+                </form>
+                <span class="login-link body-medium">Forgot Your Pin? <a href="forgot_password.html">Reset</a></span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="stepper-line"></div>
-        <div class="stepper">
-          <img src="../src/number2iconblue.svg" alt="number2icon">
-          <span class="body-medium body-medium--blue">Set Nominal</span>
+        <!-- Popup untuk Transfer Success -->
+        <div class="modal-background" id="successPopup" style="display: none;">
+          <div class="popup-modal condition">
+            <div class="popup-header">
+              <span class="body-medium body-medium--bold">TRANSFER TO <span id="successRecipientName">GHALUH 1</span></span>
+            </div>
+            <div class="popup-modal-main-container">
+              <img class="popup-modal-success-image" src="../src/womancontactus.svg" alt="Contact Us">
+              <span class="heading-small heading-small--semibold">Yeay Transfer <span style="color: #1EC15F">Success</span></span>
+              <span class="body-small">Thank you for using this application for your financial</span>
+              <button class="button-primary" id="successNext"><span class="body-medium--semibold">Next</span></button>
+              <button class="button-secondary" id="transferAgain"><span class="body-medium--semibold body-medium--semibold--blue">Transfer Again</span></button>
+            </div>
+          </div>
         </div>
-        <div class="stepper-line"></div>
-        <div class="stepper">
-          <img src="../src/number3icon.svg" alt="number2icon">
-          <span class="body-medium">Finish</span>
+        <!-- Popup untuk Transfer Failed -->
+        <div class="modal-background" id="failedPopup" style="display: none;">
+          <div class="popup-modal condition">
+            <div class="popup-header">
+              <span class="body-medium body-medium--bold">TRANSFER TO <span id="failedRecipientName">GHALUH 1</span></span>
+            </div>
+            <div class="popup-modal-main-container">
+              <img class="popup-modal-success-image" src="../src/ohno.svg" alt="Contact Us">
+              <span class="heading-small heading-small--semibold">Oops Transfer <span style="color: #D00000">Failed</span></span>
+              <span class="body-small">Sorry Theres is an issue for your transfer, try again later !</span>
+              <button class="button-primary" id="tryAgain"><span class="body-medium--semibold">Try Again</span></button>
+              <button class="button-secondary" id="backToDashboard"><span class="body-medium--semibold body-medium--semibold--blue">Back to Dashboard</span></button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="people-information-container">
-           <div class="people-information-header"><span class="body-medium body-medium--bold">People Information</span>
+        <div class="page-title">
+          <img src="../src/transfericonblue.svg" alt="history icon">
+          <span class="body-medium body-medium--bold">Transfer Money</span>
+        </div>
+        <div class="stepper-container">
+          <div class="stepper">
+            <img src="../src/number1icongrey.svg" alt="number1icon">
+            <span class="body-medium">Find People</span>
+          </div>
+          <div class="stepper-line"></div>
+          <div class="stepper">
+            <img src="../src/number2iconblue.svg" alt="number2icon">
+            <span class="body-medium body-medium--blue">Set Nominal</span>
+          </div>
+          <div class="stepper-line"></div>
+          <div class="stepper">
+            <img src="../src/number3icon.svg" alt="number2icon">
+            <span class="body-medium">Finish</span>
+          </div>
+        </div>
+        <div class="people-information-container">
+          <div class="people-information-header">
+            <span class="body-medium body-medium--bold">People Information</span>
           </div>
           <div class="people-information-card">
-              <div class="people-information-card-mini">
-                  <img src="../src/ghaluh1.svg" alt="Ghaluh 1">
-                  <div class="user-mini-info">
-                      <span class="body-small body-small--bold">Ghaluh 1</span>
-                      <span class="body-small">(239) 555-0108</span>
-                      <img src="../src/badgeverified.svg" alt="badge verified">
-                  </div>
+            <div class="people-information-card-mini">
+              <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Ghaluh 1">
+              <div class="user-mini-info">
+                <span class="body-small body-small--bold">James Walker</span>
+                <span class="body-small">(239) 555-0108</span>
+                <img src="../src/badgeverified.svg" alt="badge verified">
               </div>
-                  <img src="../src/stariconinactive.svg" alt="star icon">
-           </div>
+            </div>
+            <img src="../src/stariconinactive.svg" alt="star icon">
+          </div>
           <form class="people-information-form">
-              <div class="input-label">
-                  <label for="amount" class="body-medium body-medium--bold">Amount</label>
-                  <span class="body-small">Type the amount you want to transfer and then press continue to the next steps.</span>
-              </div>
-    
-              <input type="number" placeholder="Enter Nominal Transfer" id="input-amount" name="amount">
-    
-              <div class="input-label">
-                  <label for="notes" class="body-medium body-medium--bold">Notes</label>
-                  <span class="body-small">You can add some notes for this transfer such as payment coffee or something.</span>
-              </div>
-              <textarea placeholder="Enter Some Notes" id="input-notes" name="notes"></textarea>
-              <button class="btn-submit" type="submit"><span class="body-small body-small--white">Submit and Transfer</span></button>
+            <div class="input-label">
+              <label for="amount" class="body-medium body-medium--bold">Amount</label>
+              <span class="body-small">Type the amount you want to transfer and then press continue to the next steps.</span>
+            </div>
+            <input type="number" placeholder="Enter Nominal Transfer" id="input-amount" name="amount">
+            <div class="error-message" id="amountError"></div>
+            <div class="input-label">
+              <label for="notes" class="body-medium body-medium--bold">Notes</label>
+              <span class="body-small">You can add some notes for this transfer such as payment coffee or something.</span>
+            </div>
+            <textarea placeholder="Enter Some Notes" id="input-notes" name="notes"></textarea>
+            <button class="btn-submit" type="submit"><span class="body-small body-small--white">Submit and Transfer</span></button>
           </form>
         </div>
       </div>
     </div>
+     <script src="../script/dropdown.js"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      const namaBase64 = params.get('nama')
+      const phoneBase64 = params.get('phone')
+      const imgBase64 = params.get('img')
+
+      const nama = namaBase64 ? atob(namaBase64) : 'User Tidak Diketahui'
+      const phone = phoneBase64 ? atob(phoneBase64) : 'Nomor Tidak Diketahui'
+      const img = imgBase64 ? atob(imgBase64) : 'https://randomuser.me/api/portraits/men/11.jpg'
+
+      
+      const userImg = document.querySelector('.people-information-card-mini img')
+      const userName = document.querySelector('.user-mini-info .body-small--bold')
+      const userPhone = document.querySelector('.user-mini-info .body-small:not(.body-small--bold)')
+      const recipientNameSpan = document.getElementById('recipientName')
+      const successRecipientNameSpan = document.getElementById('successRecipientName')
+      const failedRecipientNameSpan = document.getElementById('failedRecipientName')
+
+      if (userImg && userName && userPhone && recipientNameSpan && successRecipientNameSpan && failedRecipientNameSpan) {
+        userImg.src = img;
+        userImg.alt = nama;
+        userName.textContent = nama;
+        userPhone.textContent = phone;
+        recipientNameSpan.textContent = nama.toUpperCase();
+        successRecipientNameSpan.textContent = nama.toUpperCase();
+        failedRecipientNameSpan.textContent = nama.toUpperCase()
+      } else {
+        console.error('Data not found')
+      }
+
+      
+      const form = document.querySelector('.people-information-form')
+      const amountError = document.getElementById('amountError')
+      const pinPopup = document.getElementById('pinPopup')
+      const successPopup = document.getElementById('successPopup')
+      const failedPopup = document.getElementById('failedPopup')
+      const pinForm = document.querySelector('.enter-pin')
+      const pinError = document.getElementById('pinError')
+      const successNextButton = document.getElementById('successNext')
+      const transferAgainButton = document.getElementById('transferAgain')
+      const tryAgainButton = document.getElementById('tryAgain')
+      const backToDashboardButton = document.getElementById('backToDashboard')
+
+      
+      form.addEventListener('submit', function(event) {
+        event.preventDefault()
+
+        
+        const amount = document.getElementById('input-amount').value
+        const notes = document.getElementById('input-notes').value
+
+        
+        amountError.textContent = ''
+
+      
+        let isValid = true
+
+        if (!amount || amount <= 0) {
+          amountError.textContent = 'Please enter a valid transfer amount.'
+          isValid = false
+        }
+
+        
+        if (isValid) {
+          pinPopup.style.display = 'flex'
+          document.getElementById('pin1').value = ''
+          pinError.textContent = ''
+        }
+      });
+
+     
+      pinForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const pinInput = document.getElementById('pin1')
+        pinError.textContent = ''
+
+        let isValid = true
+
+        if (!pinInput.value) {
+          pinError.textContent = 'Enter your PIN.'
+          isValid = false
+        } else if (pinInput.value.length < 6) {
+          pinError.textContent = 'Minimum 6 digits.'
+          isValid = false;
+        }
+
+        const storedPin = JSON.parse(localStorage.getItem('pinData'))
+
+        if (
+          isValid &&
+          (!storedPin || storedPin.pin !== pinInput.value)
+        ) {
+          pinPopup.style.display = 'none'
+          failedPopup.style.display = 'flex'
+          isValid = false
+        }
+
+        if (isValid) {
+          pinPopup.style.display = 'none'
+          successPopup.style.display = 'flex'
+        }
+      });
+
+     
+      successNextButton.addEventListener('click', function() {
+        successPopup.style.display = 'none'
+        window.location.href = '../pages/dashboard.html'
+      });
+
+      transferAgainButton.addEventListener('click', function() {
+        successPopup.style.display = 'none'
+        window.location.href = 'transfer1.html'
+      });
+
+      
+      tryAgainButton.addEventListener('click', function() {
+        failedPopup.style.display = 'none'
+        pinPopup.style.display = 'flex'
+        document.getElementById('pin1').value = ''
+        pinError.textContent = ''
+      });
+
+      backToDashboardButton.addEventListener('click', function() {
+        failedPopup.style.display = 'none'
+        window.location.href = '../pages/dashboard.html'
+      });
+    </script>
   </body>
 </html>
