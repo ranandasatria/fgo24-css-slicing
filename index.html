@@ -205,28 +205,26 @@
       <script src="script/hamburger.js"></script>
       <script src="script/toast.js"></script>   
       <script>
-        document.addEventListener('DOMContentLoaded', function(){
-          document.querySelector('.newsletter-input').addEventListener('submit', function (e){
-            e.preventDefault()
+      document.addEventListener('DOMContentLoaded', function () {
+       document.querySelector('.newsletter-input').addEventListener('submit', function (e) {
+         e.preventDefault()
 
-            const emailInput = document.getElementById('email')
-            const emailError = document.getElementById('emailError')
+          const emailInput = document.getElementById('email')
+          const emailError = document.getElementById('emailError')
+          emailError.textContent = ''
 
-            emairError.textContent = ''
+          let isValid = true
 
-            let isValid = true
-
-            if(!emailInput.value.trim()){
-              emailError.textContent = 'Enter your email.'
-              isValid = false
-
-              if(isValid){
-                document.querySelector('.newsletter-input').reset()
-                showToast('Subscribed successfully!')
-              }
-            }
-          })
+          if (!emailInput.value.trim()) {
+            emailError.textContent = 'Enter your email.'
+            isValid = false
+          } 
+          if (isValid) {
+            document.querySelector('.newsletter-input').reset()
+            showToast('Subscribed successfully!')
+          }
         })
+      })
       </script>
     </footer>
   </body>

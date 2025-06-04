@@ -1,48 +1,97 @@
-# Slicing CSS - E-Wallet WebApp
+# 💳 Slicing CSS – E-Wallet WebApp
 
-This project is a front-end slicing implementation of an E-Wallet Web Application using HTML and CSS. The main goal is to replicate a user interface based on a given design mockup, focusing on layout accuracy, visual consistency, and responsiveness across devices.
+This project focuses on accurately slicing a UI design mockup with responsive layout, visual consistency, and interactive DOM behavior for E-Wallet app.
 
-## Preview
-![Preview](src/preview.png)
+---
 
+## 🛠️ Built With
 
-## Getting Started
+- 🧱 **HTML5** – semantic and accessible structure  
+- 🎨 **CSS3** – responsive layout using Flexbox & Grid  
+- 📜 **JavaScript DOM** – basic interactivity without frameworks  
+- 🔄 **Live Server** – for local development preview
+
+---
+
+## 📸 Preview
+
+![E-Wallet App Preview](src/preview.png)
+
+---
+
+## 🚀 Getting Started (Local)
+
 1. Clone this project:
-```
+```bash
 git clone https://github.com/ranandasatria/fgo24-css-slicing
+cd fgo24-css-slicing
 ```
 
-2. Install the depedencies:
-```
+2. Install the development server:
+```bash
 npm install
 ```
 
-3. Run the project:
-```
+3. Start the live server:
+```bash
 npm run dev
 ```
 
-4. The project will be runnning at:
-``` 
+4. Open your browser and go to:
+```bash
 http://localhost:8080
 ```
 
-## Depedencies
 
-This project uses Node.js. Make sure you have Node.js installed on your machine.
+---
 
-- live-server: to simulate an HTTP server in a local environment.
-
-## How to contribute
-
-Please open a Pull Request (PR) to contribute to this project.
-Your PR will be reviewed and merged if necessary.
-
-## License
-
-This project following MIT License.
-
-## Copyright
-&copy; 2025 Kodacademy
+## 🐳 Optional: Running with Docker
 
 
+1. Build the Docker image:
+```bash
+docker build -t ewallet-ui .
+```
+
+2. Run the container:
+```bash
+docker run --rm -d -p 8080:80 ewallet-ui
+```
+
+3. Open in your browser:
+```bash
+http://localhost:8080
+```
+
+---
+
+## 📦 Dependencies
+
+- **Live Server** – to simulate an HTTP server in a local environment.
+- **Node.js** – required for npm-based commands.
+
+---
+
+## 🤝 How to Contribute
+
+You're welcome to contribute:
+
+1. Fork this repository.
+2. Create a new branch:
+```bash
+git checkout -b feature-improvement
+```
+3. Make your changes and commit.
+4. Push and open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🏷️ Copyright
+
+&copy; 2025 Kodacademy. All rights reserved.
