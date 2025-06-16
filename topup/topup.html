@@ -17,19 +17,19 @@
       </div>
       <nav class="menu-top">
   <div class="desktop-greetings">
-    <span class="body-medium" id="desktop-username">Guest</span>
+    <span class="body-medium" id="desktop-username"></span>
   </div>
   <div class="profile-menu">
-    <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
+    <a href="#openprofile" class="openprofile"><div class="profileWizard"></div></a>
     <a href="#dropdown" class="dropdown-toggle"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
     <div class="user-menu">
-      <a href="../profile/profile-filled.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
-      <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Keluar</span></a>
+      <a href="../profile/profile.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
+      <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Sign Out</span></a>
     </div>
   </div>
   <div class="mobile-greetings">
     <span class="caption-medium caption-medium--white">Hello,</span>
-    <span class="body-small body-small--white" id="mobile-username">Guest</span>
+    <span class="body-small body-small--white" id="mobile-username"></span>
   </div>
 </nav>
     </header>
@@ -43,8 +43,8 @@
             <img class="icon-desktop" src="../src/topupiconwhite.svg" alt="Top Up Icon">
             <img class="icon-mobile" src="../src/topupiconblue.svg" alt="Top Up Icon">
             <span class="body-medium body-medium--white">Top Up</span></a>
-          <a href="../profile/profile-filled.html" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
-          <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
+          <a href="../profile/profile.html" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
+          <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Sign Out</span></a>
         </nav>
       </aside>
       <div class="history-transaction-container-right">
@@ -58,9 +58,9 @@
             </div>
             <div class="people-information-card">
               <div class="people-information-card-mini">
-                <img src="../src/ghaluhwizard.svg" alt="Ghaluh Wizard">
+              <div id="profile-preview" class="profilePreviewAvatar"></div>
                 <div class="user-mini-info">
-                  <span id="topUpName" class="body-small body-small--bold">Ghaluh Wizard</span>
+                  <span id="topUpName" class="body-small body-small--bold"></span>
                   <span class="body-small">(239) 555-0108</span>
                   <img src="../src/badgeverified.svg" alt="badge verified">
                 </div>
@@ -109,23 +109,23 @@
           <div class="payment-information-container">
             <span class="body-medium body-medium--bold">Payment</span>
             <div class="payment-detail">
-              <div class="payment-row">
-                <span>Order</span>
-                <span>Idr.40.000</span>
-              </div>
-              <div class="payment-row">
-                <span>Delivery</span>
-                <span>Idr.0</span>
-              </div>
-              <div class="payment-row">
-                <span>Tax</span>
-                <span>Idr.4.000</span>
-              </div>
-              <div class="payment-divider"></div>
-              <div class="payment-row">
-                <span>Sub Total</span>
-                <span>Idr.44.000</span>
-              </div>
+             <div class="payment-row">
+              <span>Order</span>
+              <span id="orderAmount">-</span>
+            </div>
+            <div class="payment-row">
+              <span>Delivery</span>
+              <span>-</span>
+            </div>
+            <div class="payment-row">
+              <span>Tax</span>
+              <span id="taxAmount">-</span>
+            </div>
+            <div class="payment-divider"></div>
+            <div class="payment-row">
+              <span>Sub Total</span>
+              <span id="subtotalAmount">-</span>
+            </div>
               <span class="body-small">*Get Discount if you pay with Bank Central Asia</span>
             </div>
           </div>
@@ -133,21 +133,35 @@
       </div>
     </div>
   </div>
+  <script src="../script/redirectIfNotLoggedIn.js"></script>
    <script src="../script/dropdown.js"></script>
    <script src="../script/toast.js"></script>
   <script>
-        const userData = JSON.parse(localStorage.getItem('userData')) || {}
-        const username = userData.username || 'Guest'
-        document.getElementById('topUpName').textContent = username
+      const userData = JSON.parse(localStorage.getItem('loggedInUser')) || {}
+      const username = userData.username || ''
+      document.getElementById('topUpName').textContent = username
 
-        document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         const topupForm = document.querySelector('.topup-form')
         const amountInput = document.getElementById('input-amount')
         const amountError = document.getElementById('amountError')
         const paymentMethods = document.querySelectorAll('input[name="payment_method"]')
 
+        function formatIDR(number) {
+          return number.toLocaleString('id-ID')
+        }
 
-        topupForm.addEventListener('submit', function(e) {
+        amountInput.addEventListener('input', function () {
+          const amount = parseInt(amountInput.value) || 0
+          const tax = Math.round(amount * 0.1)
+          const subtotal = amount + tax
+
+          document.getElementById('orderAmount').textContent = `Rp${formatIDR(amount)}`
+          document.getElementById('taxAmount').textContent = `Rp${formatIDR(tax)}`
+          document.getElementById('subtotalAmount').textContent = `Rp${formatIDR(subtotal)}`
+        })
+
+        topupForm.addEventListener('submit', function (e) {
           e.preventDefault()
           amountError.textContent = ''
 
@@ -163,13 +177,15 @@
           }
 
           showToast('Top up success!')
-          
           amountInput.value = ''
           paymentMethods.forEach(method => method.checked = false)
+
+
+          document.getElementById('orderAmount').textContent = 'Rp0'
+          document.getElementById('taxAmount').textContent = 'Rp0'
+          document.getElementById('subtotalAmount').textContent = 'Rp0'
         })
       })
     </script>
-
-
   </body>
 </html>

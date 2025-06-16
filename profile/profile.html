@@ -1,103 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:400,500&display=swap" rel="stylesheet">
-    <link href="../style/global.css" rel="stylesheet">
-    <title>Profile</title>
-  </head>
-  <body>
-    <header class="navbar nondashboard">
-      <div class="logo">
-        <img src="../src/logo-icon.png" alt="logo E-Wallet">
-        <span>E-Wallet</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:400,500&display=swap" rel="stylesheet"/>
+  <link href="../style/global.css" rel="stylesheet"/>
+  <title>Profile</title>
+</head>
+<body>
+  <header class="navbar nondashboard">
+    <div class="logo">
+      <img src="../src/logo-icon.png" alt="logo E-Wallet">
+      <span>E-Wallet</span>
+    </div>
+    <nav class="menu-top">
+      <div class="desktop-greetings">
+        <span class="body-medium" id="desktop-username"></span>
       </div>
-     <nav class="menu-top">
-  <div class="desktop-greetings">
-    <span class="body-medium" id="desktop-username">Guest</span>
-  </div>
-  <div class="profile-menu">
-    <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
+      <div class="profile-menu">
+        <a href="#openprofile" class="openprofile"><div class="profileWizard"></div></a>
     <a href="#dropdown" class="dropdown-toggle"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
-    <div class="user-menu">
-      <a href="../profile/profile-filled.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
-      <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Keluar</span></a>
-    </div>
-  </div>
-  <div class="mobile-greetings">
-    <span class="caption-medium caption-medium--white">Hello,</span>
-    <span class="body-small body-small--white" id="mobile-username">Guest</span>
-  </div>
-</nav>
-    </header>
-    <div class="main-container">
-      <aside class="container-left">
-       <nav class="menu-left">
-          <a href="/pages/dashboard.html" class="menu-inactive"><img src="../src/dashboardiconinactive.svg" alt="Dashboard Icon"><span class="body-small">Dashboard</span></a>
-          <a href="#transfer" class="menu-inactive"><img src="../src/transfericon.svg" alt="Transfer Icon"><span class="body-small">Transfer</span></a>
-          <a href="../history/history.html" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
-          <a href="../topup/topup.html" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
-          <a href="profile-filled.html" class="menu-active">
-            <img class="icon-desktop" src="../src/menuprofileactive24.svg" alt="Menu Profile Icon">
-            <img class="icon-mobile" src="../src/menuprofileblue.svg" alt="Menu Profile Blue">
-            <span class="body-medium body-medium--white">Profile</span></a>
-          <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
-        </nav>
-      </aside>
-      <div class="history-transaction-container-right">
-        <div class="page-title">
-          <img src="../src/profileiconblue.svg" alt="profile icon">
-          <span class="body-medium body-medium--bold">Profile</span>
-        </div>
-        <div class="people-information-container">
-          <div class="people-information-header"><span class="body-medium body-medium--bold">Profile Picture</span>
-          </div>
-          <form class="edit-profile-form">
-            <div class="profile-edit-mini">
-              <img src="../src/nopicture.svg" alt="no picture">
-              <div class="profile-edit-mini-button">
-                <button class="button-primary" type="submit"><img src="../src/changeprofile.svg"><span class="body-medium--semibold">Change Profile</span></button>
-                <button class="button-danger" type="submit"><img src="../src/deleteicon24.svg"><span class="body-medium--semibold body-medium--semibold--red">Delete Profile</span></button>
-              </div>
-            </div>
-            <span class="body-small">The profile picture must be 512 x 512 pixels or less</span>
-            <div class="label-and-input">
-              <label for="fullName"><span class="body-medium body-medium--semibold--dark">Enter Full Name</span></label>
-              <div class="input-row">
-                <img src="../src/profileminiwhite.svg" alt="profile name">
-                <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name">
-              </div>
-            </div>
-            <div class="label-and-input">
-              <label for="phoneNumber"><span class="body-medium body-medium--semibold--dark">Phone</span></label>
-              <div class="input-row">
-                <img src="../src/phone16icon.svg" alt="phone icon">
-                <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter Your Phone Number">
-              </div>
-            </div>
-            <div class="label-and-input">
-              <label for="email"><span class="body-medium body-medium--semibold--dark">Email</span></label>
-              <div class="input-row">
-                <img src="../src/email16icon.svg" alt="email icon">
-                <input type="email" id="email" name="email" placeholder="Enter Your Email">
-              </div>
-            </div>
-            <div class="label-and-input">
-              <label for="changePassword"><span class="body-medium body-medium--semibold--dark">Password</span></label>
-              <a href="changepassword.html" class="link-button"><span class="body-medium body-medium--blue"  >Change Password</span></a>
-            </div>
-            <div class="label-and-input">
-              <label for="changePin"><span class="body-medium body-medium--semibold--dark">Pin</span></label>
-              <a href="changepin.html" class="link-button"><span class="body-medium body-medium--blue"  >Change Pin</span></a>
-            </div>
-            <button class="button-primary" type="submit"><span class="body-medium--semibold">Submit</span></button>
-          </form>
+        <div class="user-menu">
+          <a href="../profile/profile.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
+          <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Sign Out</span></a>
         </div>
       </div>
+      <div class="mobile-greetings">
+        <span class="caption-medium caption-medium--white">Hello,</span>
+        <span class="body-small body-small--white" id="mobile-username"></span>
+      </div>
+    </nav>
+  </header>
+
+  <div class="main-container">
+    <aside class="container-left">
+      <nav class="menu-left">
+        <a href="/pages/dashboard.html" class="menu-inactive"><img src="../src/dashboardiconinactive.svg" alt="Dashboard Icon"><span class="body-small">Dashboard</span></a>
+        <a href="#transfer" class="menu-inactive"><img src="../src/transfericon.svg" alt="Transfer Icon"><span class="body-small">Transfer</span></a>
+        <a href="../history/history.html" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
+        <a href="../topup/topup.html" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
+        <a href="profile-filled.html" class="menu-active">
+          <img class="icon-desktop" src="../src/menuprofileactive24.svg" alt="Menu Profile Icon">
+          <img class="icon-mobile" src="../src/menuprofileblue.svg" alt="Menu Profile Blue">
+          <span class="body-medium body-medium--white">Profile</span>
+        </a>
+        <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Sign Out</span></a>
+      </nav>
+    </aside>
+
+    <div class="history-transaction-container-right">
+      <div class="page-title">
+        <img src="../src/profileiconblue.svg" alt="profile icon">
+        <span class="body-medium body-medium--bold">Profile</span>
+      </div>
+
+      <div class="people-information-container">
+        <div class="people-information-header">
+          <span class="body-medium body-medium--bold">Profile Picture</span>
+        </div>
+
+        <form class="edit-profile-form">
+          <div class="profile-edit-mini">
+            <div id="profile-preview" class="profilePreviewAvatar"></div>
+            <div class="profile-edit-mini-button">
+              <button id="change-profile-btn" class="button-primary" type="button">
+                <img src="../src/changeprofile.svg">
+                <span class="body-medium--semibold">Change Picture</span>
+              </button>
+              <button id="delete-profile-btn" class="button-danger" type="button">
+                <img src="../src/deleteicon24.svg">
+                <span class="body-medium--semibold body-medium--semibold--red">Delete</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="label-and-input">
+            <label for="username"><span class="body-medium body-medium--semibold--dark">Username</span></label>
+            <div class="input-row">
+              <img src="../src/profileminiwhite.svg" alt="profile name">
+              <input type="text" id="username" name="username" placeholder="Enter username">
+            </div>
+          </div>
+
+          <div class="label-and-input">
+            <label for="phoneNumber"><span class="body-medium body-medium--semibold--dark">Phone</span></label>
+            <div class="input-row">
+              <img src="../src/phone16icon.svg" alt="phone icon">
+              <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number">
+            </div>
+          </div>
+
+          <div class="label-and-input">
+            <label for="email"><span class="body-medium body-medium--semibold--dark">Email</span></label>
+            <div class="input-row">
+              <img src="../src/email16icon.svg" alt="email icon">
+              <input type="email" id="email" name="email" placeholder="Enter email">
+            </div>
+          </div>
+
+          <div class="label-and-input">
+            <label><span class="body-medium body-medium--semibold--dark">Password</span></label>
+            <a href="change-password.html" class="link-button"><span class="body-medium body-medium--blue">Change Password</span></a>
+          </div>
+
+          <div class="label-and-input">
+            <label><span class="body-medium body-medium--semibold--dark">Pin</span></label>
+            <a href="change-pin.html" class="link-button"><span class="body-medium body-medium--blue">Change Pin</span></a>
+          </div>
+
+          <button class="button-primary" type="submit"><span class="body-medium--semibold">Submit</span></button>
+        </form>
+      </div>
     </div>
-     <script src="../script/dropdown.js"></script>
-  </body>
+  </div>
+
+  <script src="../script/dropdown.js"></script>
+  <script src="../script/toast.js"></script>
+   <script src="../script/redirectIfNotLoggedIn.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let userData = JSON.parse(localStorage.getItem('loggedInUser')) || {}
+
+      const usernameInput = document.getElementById('username')
+      const emailInput = document.getElementById('email')
+      const phoneInput = document.getElementById('phoneNumber')
+      const profileImage = document.getElementById('profile-preview')
+      const changeProfileBtn = document.getElementById('change-profile-btn')
+      const deleteProfileBtn = document.getElementById('delete-profile-btn')
+
+      function updateUserData(previousEmail) {
+      localStorage.setItem('loggedInUser', JSON.stringify(userData))
+
+      let users = JSON.parse(localStorage.getItem('users')) || []
+      let updatedUsers = users.map(u => {
+        if (u.email === previousEmail) {
+          return userData 
+        }
+        return u
+      })
+      localStorage.setItem('users', JSON.stringify(updatedUsers))
+      }
+
+      if (userData.username) usernameInput.value = userData.username
+      if (userData.email) emailInput.value = userData.email
+      if (userData.phoneNumber) phoneInput.value = userData.phoneNumber
+      if (userData.profilePicture) {
+        profileImage.style.backgroundImage = `url('${userData.profilePicture}')`
+      }
+
+      changeProfileBtn.addEventListener('click', () => {
+        const input = document.createElement('input')
+        input.type = 'file'
+        input.accept = 'image/*'
+        input.onchange = (e) => {
+          const file = e.target.files[0]
+          if (!file) return
+          const reader = new FileReader()
+          reader.onload = function () {
+            const imageData = reader.result
+            userData.profilePicture = imageData
+            profileImage.style.backgroundImage = `url('${imageData}')`
+            updateUserData()
+            showToast('Profile picture updated!')
+          }
+          reader.readAsDataURL(file)
+        }
+        input.click()
+      })
+
+      deleteProfileBtn.addEventListener('click', () => {
+        delete userData.profilePicture
+        profileImage.style.backgroundImage = 'none'
+        updateUserData()
+        showToast('Profile picture removed!')
+      })
+
+      document.querySelector('.edit-profile-form').addEventListener('submit', function (e) {
+      e.preventDefault()
+
+      const previousEmail = userData.email 
+
+      userData.username = usernameInput.value.trim()
+      userData.email = emailInput.value.trim()
+      userData.phoneNumber = phoneInput.value.trim()
+
+      updateUserData(previousEmail)
+      showToast('Profile updated successfully!')
+      })
+  })
+  </script>
+</body>
 </html>

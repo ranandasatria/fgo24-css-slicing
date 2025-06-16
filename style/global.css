@@ -320,6 +320,7 @@ h2 {
 .profileWizard {
   width: 48px;
   height: 48px;
+  border-radius: 12px;
 }
 
 .dropdown {
@@ -343,6 +344,21 @@ h2 {
   background-color: #FFFFFF;
   z-index: 100;
 }
+
+.profileWizard,
+.profilePreviewAvatar {
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center;
+}
+.profilePreviewAvatar {
+  width: 128px;
+  height: 128px;
+}
+
 
 /* .user-menu {
   display: none;

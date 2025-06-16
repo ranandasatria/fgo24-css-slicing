@@ -65,46 +65,56 @@
             <img src="../src/wallet.png" alt="wallet">
         </div>
     </main>
-<script src="../script/showandhidepassword.js"></script>
-       
-<script>
-    document.querySelector('.register-form').addEventListener('submit', function(e){
-        e.preventDefault()
-
-        const emailInput = document.getElementById('email')
-        const passwordInput = document.getElementById('password')
-        const confirmPasswordInput = document.getElementById('confirmPassword')
-        const emailError = document.getElementById('emailError')
-        const passwordError = document.getElementById('passwordError')
-        const confirmPasswordError = document.getElementById('confirmPasswordError')
-
-        emailError.textContent = ''
-        passwordError.textContent = ''
-        confirmPasswordError.textContent = ''
-
-        let isValid = true
-
-        if (!emailInput.value.trim()){
-            emailError.textContent = 'Enter your email.'
-            isValid = false
+    <script src="../script/showandhidepassword.js"></script>  
+    <script>
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
+        if (loggedInUser) {
+        window.location.href = '/pages/dashboard.html' 
         }
 
-        if (!passwordInput.value){
-            passwordError.textContent = 'Enter your password.'
-            isValid = false
-        }else if (passwordInput.value.length < 6){
-            passwordError.textContent = 'Minimum 6 characters.'
-            isValid = false
-        }
+        document.querySelector('.register-form').addEventListener('submit', function(e){
+            e.preventDefault()
 
-         if (!confirmPasswordInput.value) {
-            confirmPasswordError.textContent = 'Confirm your password.'
-            isValid = false
-        } else if (passwordInput.value !== confirmPasswordInput.value) {
-            confirmPasswordError.textContent = "Password confirmation doesn't match."
-            isValid = false
-        }
+            const emailInput = document.getElementById('email')
+            const passwordInput = document.getElementById('password')
+            const confirmPasswordInput = document.getElementById('confirmPassword')
+            const emailError = document.getElementById('emailError')
+            const passwordError = document.getElementById('passwordError')
+            const confirmPasswordError = document.getElementById('confirmPasswordError')
 
+            emailError.textContent = ''
+            passwordError.textContent = ''
+            confirmPasswordError.textContent = ''
+
+            let isValid = true
+
+            if (!emailInput.value.trim()){
+                emailError.textContent = 'Enter your email.'
+                isValid = false
+            }
+
+            if (!passwordInput.value){
+                passwordError.textContent = 'Enter your password.'
+                isValid = false
+            }else if (passwordInput.value.length < 6){
+                passwordError.textContent = 'Minimum 6 characters.'
+                isValid = false
+            }
+
+            if (!confirmPasswordInput.value) {
+                confirmPasswordError.textContent = 'Confirm your password.'
+                isValid = false
+            } else if (passwordInput.value !== confirmPasswordInput.value) {
+                confirmPasswordError.textContent = "Password confirmation doesn't match."
+                isValid = false
+            }
+
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+
+        if (isValid && users.some(user => user.email === emailInput.value.trim())) {
+            emailError.textContent = 'Email is already registered.';
+            isValid = false;
+        }
         if (isValid){
             const username = emailInput.value.split('@')[0].trim() || 'user'
             const user = {
@@ -112,115 +122,12 @@
                 password: passwordInput.value,
                 username: username
             }
-
-            localStorage.setItem('userData', JSON.stringify(user))
+            users.push(user);
+            localStorage.setItem('users', JSON.stringify(users)) 
             document.querySelector('.register-form').reset()
             window.location.href = 'create_pin.html'
         }
     })
-</script>
+    </script>
 </body>
 </html>
-<script>document.querySelector('.register-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirmPassword');
-    const emailError = document.getElementById('emailError');
-    const passwordError = document.getElementById('passwordError');
-    const confirmPasswordError = document.getElementById('confirmPasswordError');
-
-    emailError.textContent = '';
-    passwordError.textContent = '';
-    confirmPasswordError.textContent = '';
-
-    let isValid = true;
-
-    // Validasi email
-    if (!emailInput.value.trim()) {
-        emailError.textContent = 'Enter your email.';
-        isValid = false;
-    }
-
-    // Validasi password
-    if (!passwordInput.value) {
-        passwordError.textContent = 'Enter your password.';
-        isValid = false;
-    } else if (passwordInput.value.length < 6) {
-        passwordError.textContent = 'Minimum 6 characters.';
-        isValid = false;
-    }
-
-    // Validasi konfirmasi password
-    if (!confirmPasswordInput.value) {
-        confirmPasswordError.textContent = 'Confirm your password.';
-        isValid = false;
-    } else if (passwordInput.value !== confirmPasswordInput.value) {
-        confirmPasswordError.textContent = "Password confirmation doesn't match.";
-        isValid = false;
-    }
-
-    // Ambil data users dari localStorage atau inisialisasi array kosong
-    let users = JSON.parse(localStorage.getItem('users')) || [];
-
-    // Cek apakah email sudah terdaftar
-    if (isValid && users.some(user => user.email === emailInput.value.trim())) {
-        emailError.textContent = 'Email is already registered.';
-        isValid = false;
-    }
-
-    // Jika semua validasi lolos, simpan user baru
-    if (isValid) {
-        const username = emailInput.value.split('@')[0].trim() || 'user';
-        const newUser = {
-            email: emailInput.value.trim(),
-            password: passwordInput.value,
-            username: username
-        };
-
-        // Tambahkan user baru ke array
-        users.push(newUser);
-
-        // Simpan kembali array ke localStorage
-        localStorage.setItem('users', JSON.stringify(users));
-
-        // Reset form dan arahkan ke halaman berikutnya
-        document.querySelector('.register-form').reset();
-        window.location.href = 'create_pin.html';
-    }
-});</script>
-
-<script>
-document.querySelector('.register-form').addEventListener('submit', function(e){
-    e.preventDefault()
-
-    const emailInput = document.getElementById('email')
-    const passwordInput = document.getElementById('password')
-    const confirmPasswordInput = document.getElementById('confirmPassowrd')
-
-    const emailError = document.getElementById('emailError')
-    const passwordError = document.getElementById('passwordError')
-    const confirmPasswordError = document.getElementById('confirmPasswordError')
-
-    emailError.textContent = ''
-    passwordError.textContent = ''
-
-    let isValid = true
-
-    if(!emailInput.value.trim()) {
-        emailError.textContent = "Enter your email."
-        isValid=false
-    }
-
-    if(!passwordInput.value){
-        passwordError.textContent = "Enter your password"
-        isValid = false
-    }else if (passwordInput.value < 6){
-        
-    }
-
-})
-
-
-</script>

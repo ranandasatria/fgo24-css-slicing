@@ -56,46 +56,51 @@
     </main>
     <script src="../script/showandhidepassword.js"></script>
     <script>
-document.querySelector('.login-form').addEventListener('submit', function (e) {
-  e.preventDefault()
+       const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
+        if (loggedInUser) {
+        window.location.href = '/pages/dashboard.html' 
+        }
+        document.querySelector('.login-form').addEventListener('submit', function (e) {
+          e.preventDefault();
 
-  const emailInput = document.getElementById('loginEmail')
-  const passwordInput = document.getElementById('loginPassword')
-  const emailError = document.getElementById('emailError')
-  const passwordError = document.getElementById('passwordError')
+          const emailInput = document.getElementById('loginEmail');
+          const passwordInput = document.getElementById('loginPassword');
+          const emailError = document.getElementById('emailError');
+          const passwordError = document.getElementById('passwordError');
 
-  emailError.textContent = ''
-  passwordError.textContent = ''
+          emailError.textContent = '';
+          passwordError.textContent = '';
 
-  let isValid = true
+          let isValid = true;
 
-  if (!emailInput.value.trim()) {
-    emailError.textContent = 'Enter your email.'
-    isValid = false
-  }
+          if (!emailInput.value.trim()) {
+            emailError.textContent = 'Enter your email.';
+            isValid = false;
+          }
 
-  if (!passwordInput.value) {
-    passwordError.textContent = 'Enter your password.'
-    isValid = false
-  }
+          if (!passwordInput.value) {
+            passwordError.textContent = 'Enter your password.';
+            isValid = false;
+          }
 
-  const storedUser = JSON.parse(localStorage.getItem('userData'))
+          const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
 
-  if (
-    isValid &&
-    (!storedUser ||
-      storedUser.email !== emailInput.value.trim() ||
-      storedUser.password !== passwordInput.value)
-  ) {
-    passwordError.textContent = 'Wrong email or password. Please try again'
-    isValid = false
-  }
+          const foundUser = storedUsers.find(user =>
+            user.email === emailInput.value.trim() &&
+            user.password === passwordInput.value
+          );
 
-  if (isValid) {
-    window.location.href = 'enter_pin.html'
-    } else {
-  }
-})
-</script>
+          if (isValid && !foundUser) {
+            passwordError.textContent = 'Wrong email or password. Please try again.';
+            isValid = false;
+          }
+
+          if (isValid) {
+            localStorage.setItem('loggedInUser', JSON.stringify(foundUser));
+            window.location.href = 'enter_pin.html';
+          }
+        });
+  </script>
+
 </body>
 </html>

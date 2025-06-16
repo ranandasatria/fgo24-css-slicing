@@ -17,19 +17,19 @@
   </div>
  <nav class="menu-top">
   <div class="desktop-greetings">
-    <span class="body-medium" id="desktop-username">Guest</span>
+    <span class="body-medium" id="desktop-username"></span>
   </div>
   <div class="profile-menu">
-    <a href="#openprofile" class="openprofile"><img class="profileWizard" src="../src/profileWizard.png" alt="Profile"></a>
+    <a href="#openprofile" class="openprofile"><div class="profileWizard"></div></a>
     <a href="#dropdown" class="dropdown-toggle"><img class="dropdown" src="../src/dropdown.png" alt="Dropdown"></a>
     <div class="user-menu">
-      <a href="../profile/profile-filled.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
-      <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Keluar</span></a>
+      <a href="../profile/profile.html" class="menu-item"><img src="../src/profile24grey.svg" alt="Profile Icon"><span class="body-medium"> Profile</span></a>
+      <a href="../index.html" class="menu-item logout"><img src="../src/logoutmenuicon.svg" alt="Logout Icon"><span class="body-medium .body-medium--semibold--red">Sign Out</span></a>
     </div>
   </div>
   <div class="mobile-greetings">
     <span class="caption-medium caption-medium--white">Hello,</span>
-    <span class="body-small body-small--white" id="mobile-username">Guest</span>
+    <span class="body-small body-small--white" id="mobile-username"></span>
   </div>
 </nav>
   <div class="nav-divider"></div>
@@ -45,8 +45,8 @@
           <a href="../transfer/transfer1.html" class="menu-inactive"><img src="../src/transfericon.svg" alt="Transfer Icon"><span class="body-small">Transfer</span></a>
           <a href="../history/history.html" class="menu-inactive"><img src="../src/historyicon.svg" alt="History Icon"><span class="body-small">History</span></a>
           <a href="../topup/topup.html" class="menu-inactive"><img src="../src/topupicon.svg" alt="Top Up Icon"><span class="body-small">Top Up</span></a>
-          <a href="../profile/profile-filled.html" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
-          <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Keluar</span></a>
+          <a href="../profile/profile.html" class="menu-inactive"><img src="../src/menuprofile.svg" alt="Menu Profile Icon"><span class="body-small">Profile</span></a>
+          <a href="../index.html" class="menu-inactive"><img src="../src/keluaricon.svg" alt="Keluar Icon"><span class="body-small body-small--red">Sign Out</span></a>
         </nav>
       </aside>
       <div class="container-right">
@@ -131,6 +131,7 @@
 </div>
     </div>
  <script src="../script/dropdown.js"></script>
+ <script src="../script/redirectIfNotLoggedIn.js"></script>
  <script>
   async function fetchData(){
     try{
